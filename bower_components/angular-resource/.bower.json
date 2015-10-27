@@ -1,0 +1,19 @@
+{
+  "name": "angular-resource",
+  "version": "1.4.0-beta.6",
+  "main": "./angular-resource.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.4.0-beta.6"
+  },
+  "homepage": "https://github.com/angular/bower-angular-resource",
+  "_release": "1.4.0-beta.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.0-beta.6",
+    "commit": "c0e964128bda203e9757f5dade4b039567403a01"
+  },
+  "_source": "git://github.com/angular/bower-angular-resource.git",
+  "_target": "1.4.0-beta.6",
+  "_originalSource": "angular-resource"
+}

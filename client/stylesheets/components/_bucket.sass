@@ -1,0 +1,63 @@
+// *************************************
+//
+//   Bucket
+//   -> Based on:
+//      * http://jsfiddle.net/necolas/rZvEF/
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .bucket[flag]
+//
+//   .bucket-media
+//     / ...
+//
+//   .bucket-content
+//     / ...
+//
+// *************************************
+
+.bucket
+  @extend .group
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Flag ----- //
+
+.bucket--flag
+  display: table
+
+  .bucket-content
+    vertical-align: middle
+
+// ----- Sizes ----- //
+
+// Large
+
+.bucket--l
+
+  .bucket-media
+    margin-right: $b-space-l
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Content ----- //
+
+.bucket-content
+  display: table-cell
+  width: 10000px
+
+// ----- Media ----- //
+
+.bucket-media
+  float: left
+  margin-right: $b-space
+
+  > img, svg
+    display: block
+    max-width: none

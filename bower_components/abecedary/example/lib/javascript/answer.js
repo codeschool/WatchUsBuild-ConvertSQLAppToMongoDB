@@ -1,0 +1,1 @@
+module.exports = 'function add(one, two) {\n  return one + two;\n}';

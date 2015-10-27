@@ -1,0 +1,4 @@
+while message = flash.shift() 
+  .alert.in.js-alert(class='alert--' + message.type)
+    a.alert-msg-close.js-alert-close(href='#') &times;
+    p.alert-msg= message.message

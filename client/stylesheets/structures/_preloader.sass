@@ -1,0 +1,70 @@
+// *************************************
+//
+//   Preloader
+//   -> Inbound placeholder
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .preloader
+//   .preloader-progress
+//     .preloader-progress-item
+//     .preloader-progress-item
+//     .preloader-progress-item
+//
+// *************************************
+
+$preloader-progress-item-duration: 1s
+$preloader-progress-item-count: 3
+$preloader-progress-item-delay: 0.3s
+$preloader-progress-item-size: 30px
+
+.preloader
+  display: inline-block
+  position: relative
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.preloader-progress
+  @extend .clearfix
+  position: absolute
+  top: 89px // FIXME: Magic number!
+  width: 300px
+
+.preloader-progress-item
+  animation: preloader-progress-item $preloader-progress-item-duration ease-in-out infinite alternate
+  background: $capeCod
+  border-radius: 50%
+  display: inline-block
+  float: left
+  height: $preloader-progress-item-size
+  width: $preloader-progress-item-size
+
+  &:not(:first-child)
+    margin-left: 20px
+
+  @for $index from 1 through $preloader-progress-item-count
+
+    &:nth-child(#{$index})
+      animation-delay: -($preloader-progress-item-duration - ($preloader-progress-item-delay * $index))
+
+.preloader-img
+  display: inline-block
+  margin-left: 100px
+
+// -------------------------------------
+//   Animations
+// -------------------------------------
+
+// ----- Progress ----- //
+
+// Item
+
+@keyframes preloader-progress-item
+  0%
+    transform: scale(0.5)
+  100%
+    transform: scale(1)

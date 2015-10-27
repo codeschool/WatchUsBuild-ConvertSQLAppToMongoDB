@@ -1,0 +1,20 @@
+{
+  "name": "abecedary",
+  "version": "0.0.5",
+  "main": "dist/abecedary.js",
+  "ignore": [
+    "**/*.txt"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/codeschool/abecedary",
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.5",
+    "commit": "cece490a13f9ff769c9e22dbc9cf5e22dc571cbf"
+  },
+  "_source": "git://github.com/codeschool/abecedary.git",
+  "_target": "~0.0.5",
+  "_originalSource": "abecedary"
+}

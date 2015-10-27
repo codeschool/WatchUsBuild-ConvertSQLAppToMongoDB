@@ -1,0 +1,12 @@
+{
+  "name": "cs_console",
+  "_cacheHeaders": {
+    "ETag": "\"8e3d2722e53a8605641e755bb6b71810da145c30\"",
+    "Content-Type": "application/zip",
+    "Content-Disposition": "attachment; filename=cs_console-master.zip"
+  },
+  "_release": "e-tag:8e3d2722e",
+  "_source": "https://github.com/renz45/cs_console/archive/master.zip",
+  "_target": "*",
+  "_originalSource": "https://github.com/renz45/cs_console/archive/master.zip"
+}

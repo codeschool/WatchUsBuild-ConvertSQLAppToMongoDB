@@ -1,0 +1,56 @@
+block current_nav
+  - current_page = 'Guidelines'
+
+block layout_variables
+  - pageTitle = 'Guidelines'
+
+extends /views/layouts/layout
+
+block content
+
+  section.row
+    .cell.cell--s.well.well--l.well--m--xl
+
+      img.db.mbl.mhc(src='/images/img-guidelines.svg' alt='' width='780')
+
+      h1 Community Guidelines
+      p.
+        Found an interesting piece of JavaScript news you’d like to share with
+        the community? Great! Here are the next steps.
+
+      h2 Submitting a Story
+      p
+        | To add a story, simply click the “New Post” button on the 
+        a(href='/news') News page
+        | .
+        | You’ll need to authenticate with GitHub before you can add a post (if
+        | you don’t have a GitHub profile yet, 
+        a(href='https://github.com/join') you can create one on their site
+        | ).
+        | You can then create a story, including the title, link, and brief
+        | description. Every post is moderated before it’s published, so once you
+        | hit “Submit,” your story goes into the queue for approval.
+
+      p.
+        Here are a few do's and don’ts to make sure your story gets shared with
+        the community.
+
+      h3 Do:
+      ul.list.list--styled.mbm
+        li.list-item.
+          Keep it informative and brief, but not too brief — posts need to be
+          between 100-300 characters
+        li.list-item.
+          Make sure what you’re posting has good educational value
+        li.list-item.
+          Contribute — this community is only as good as its communication, so speak up!
+
+      h3 Don't:
+      ul.list.list--styled
+        li.list-item.
+          Add job postings, blog advertisements, or any other promotional posts
+        li.list-item.
+          Rant — let’s keep things civil and open
+        li.list-item.
+          Be shy — feel free to engage in conversation and add stories
+          regularly

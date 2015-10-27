@@ -1,0 +1,110 @@
+block layout_variables
+  - pageTitle = 'News'
+  - metaDescription = 'The latest news from the JavaScript community and the fine folks at 5 Minutes of JavaScript.'
+  - dispatcher = 'news:show'
+
+extends /views/layouts/layout
+
+block content
+
+  .has-alert
+    include /views/partials/_flash
+
+  section.row
+    .cell.cell--s.well.well--xl
+
+      article.bdrbl.pbl.mbm(role='article')
+
+        time.label.mbxs= moment(doc.published_at).format('ll')
+        h1.h.h--1
+          a.externalLink.tct.twb(href=doc.url target='_blank')
+            = doc.title
+            - iconPartial = { name: 'external', className: 'externalLink-icon', size: 20 }
+            include /views/partials/_icon
+
+        .bucket.bucket--flag.mbm
+          .bucket-media
+            img.thumb(src=doc.user.avatar_url width=50)
+          .bucket-content.h.h--3.tcs
+            ul.list.list--inline.list--inline--divided.tfh
+              li.list-item
+                span.twn via 
+                | #{doc.user.name}
+              li.list-item
+                a.dib.js-createComment-number.js-editComment-number(href='#comments')= pluralize('Comment', doc.comment_count, true)
+
+        p.well.well--l.tsl= doc.body
+
+      - commentsClass = doc.comment_count == 0 ? 'is-empty' : ''
+      aside#comments.js-createComment-container(role='complementary' class=commentsClass)
+        h2.h.h--3.tcs.mbm.js-createComment-number.js-editComment-number= pluralize('Comment', doc.comment_count, true)
+
+        if doc.comment_count > 0
+
+          ul.list.list--l.list--divided.list--divided--l.bdrb.mbxl.pbl.js-createComment-list
+            - for comment in doc.comments
+              li.list-item.js-editComment(id='comment-' + comment.id
+              data-id="#{comment.id}")
+                .bucket
+                  .bucket-media
+                    img.thumb(src=comment.user.avatar_url width=50)
+                  .bucket-content
+                    .split.mbm.tfh
+                      .split-item
+                        .split-cell
+                          span.mrs.twb= comment.user.name
+                          time.tcs.tsi= moment(comment.created_at).format('LL')
+
+                        if comment.user.id == user.id
+                          .split-cell
+                            button.link.js-editComment-editBtn Edit
+
+                    p.mbf.js-editComment-comment= comment.body
+
+                    if comment.user.id == user.id
+
+                      form.form.js-editComment-form.is-hidden(action='')
+                        textarea.form-input.form-textarea.js-autosize.js-editComment-textarea= comment.body
+
+                        .split.split--center
+                          .split-item
+                            .split-cell
+                              button.link.link--error.js-editComment-deleteBtn Delete
+                            .split-cell
+                              .has-btn
+                                button.btn.btn--a--bordered.js-editComment-cancelBtn Cancel
+                                button.btn.js-editComment-saveBtn Save Changes
+
+        else
+
+          ul.list.list--l.list--divided.list--divided--l.bdrb.mbxl.pbl.js-createComment-list.is-hidden
+
+          .mbxl.js-createComment-empty
+            p.tcs.tsi There are no comments on this story. Add yours below!
+
+        .split.mbm
+          .split-item
+            .split-cell
+              h2.h.h--3.tcs Post a New Comment
+            if user.authenticated
+              .split-cell
+                img.thumb.dib.mrs.mwn(src=doc.user.avatar_url width=25)
+                a(href='/users/signout') Not you?
+
+        if user.authenticated
+
+          form.form.js-formValidator.js-saveProgress-container.js-createComment(action='/news/'+doc.slug+'/comment' method='POST')
+            .bucket
+              .bucket-media
+                img.thumb(src=doc.user.avatar_url width=50)
+              .bucket-content
+                fieldset.form-field
+                  textarea.form-input.form-textatrea.js-autosize.js-formValidator-input.js-saveProgress(name='body' data-saveprogress='comment' data-validate='required' required='true')
+
+                input(type='hidden' name='_csrf' value=token)
+                input.btn.btn--a.form-btn.js-formValidator-submit(type='submit' value='Submit')
+        else
+
+          .card.bdr.tac
+            p.tcs.tsi You need to authenticate with GitHub in order to comment on this post.
+            a.btn.btn--a.form-btn(href='/users/sign_in') Authenticate with GitHub

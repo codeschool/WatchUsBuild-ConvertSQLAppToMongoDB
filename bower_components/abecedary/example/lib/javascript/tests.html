@@ -1,0 +1,35 @@
+var assert = require('chai').assert,
+    Sandbox = require('javascript-sandbox'),
+    jshint = require('jshint').JSHINT;
+
+describe('add', function() {
+  var sandbox;
+
+  beforeEach(function() {
+    try {
+      sandbox = new Sandbox();
+      sandbox.evaluate(code);
+    } catch(e) {}
+  });
+  
+  afterEach(function() {
+    sandbox.destroy();
+  });
+
+  it("Looks like there's a syntax error in your code.", function() {
+    if(!jshint(code)) { throw jshint.errors[0]; }
+  });
+
+  it('Be sure to define a function named `add`.', function() {
+    assert(typeof sandbox.get('add') === 'function');
+  });
+
+  it('Your `add` function should take in two arguments.', function() {
+    assert(sandbox.get('add').length === 2);
+  });
+  
+  it('`add` should return the result of adding the two arguments.', function() {
+    var result = sandbox.exec(function() { return this.add(40,2) });
+    assert(result === 42);
+  });
+});

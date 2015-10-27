@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+
+  block layout_variables
+  include /views/layouts/_head
+
+  - dispatcher = dispatcher ? dispatcher : ''
+  body.js-dispatcher(data-dispatcher-page=dispatcher)
+
+    - headerPartial = { bleed: true }
+    include /views/partials/_header
+
+    main(role='main')
+      block content
+
+    include /views/partials/_footer
+
+    script(src='/javascripts/vendor.js')
+    script(src='/javascripts/application.js')

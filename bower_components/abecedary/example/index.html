@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Abecedary Demo</title>
+    <link rel='stylesheet' href='build/build.css' />
+  </head>
+  <body>
+    <div class='row'>
+      <div class='col-sm-4' id='content'>
+        <div id='question'>
+          <h3></h3>
+          <div class='instructions'></div>
+        </div>
+
+        <ul class='tasks'></ul>
+        <p class='stats'></p>
+
+        <div class='details'>
+          <h4>Run Details</h4>
+          <ul></ul>
+        </div>
+
+        <h4>All Examples</h4>
+        <ul id='examples'>
+          <li><a href="#" data-example='javascript'>JavaScript</a></li>
+          <li><a href="#" data-example='javascript-logging'>JavaScript Logging</a></li>
+        </ul>
+      </div>
+
+      <div class='col-sm-8' id='editors'>
+        <ul class='nav nav-tabs'>
+          <li class="first active"><a href='#code' data-loc='code'>app.js</a></li>
+          <li><a href='#tests' data-loc='tests'>Tests</a></li>
+          <li><a href='#answer' data-loc='answer'>Answer</a></li>
+        </ul>
+
+        <div class='tab-content'>
+          <div class='tab-pane active' id='code'>
+            <div class='editor'></div>
+          </div>
+          <div class='tab-pane' id='tests'>
+            <div class='tests'></div>
+          </div>
+          <div class='tab-pane' id='answer'>
+            <div class='answer'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='build/build.js'></script>
+    <script>require('boot')</script>
+  </body>
+</html>

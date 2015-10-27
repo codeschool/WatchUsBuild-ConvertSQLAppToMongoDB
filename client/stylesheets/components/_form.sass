@@ -1,0 +1,132 @@
+// *************************************
+//
+//   Form
+//   -> User input environment
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %form.form[condensed]
+//
+//   %fieldset.form-field[inline]
+//     .form-instruction
+//     %label.form-label
+//     %input.form-input[dark]
+//     %textarea.form-textarea
+//
+// *************************************
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Condensed ----- //
+
+.form--condensed
+
+  .form-field
+    margin-bottom: $b-space-s
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Button ----- //
+
+.form-btn
+  border: $form-shared-borderWidth solid transparent
+  line-height: $form-shared-lineHeight
+
+// ----- Field ----- //
+
+.form-field
+  border: 0
+  margin: 0 0 $b-space
+  padding: 0
+
+// Inline
+
+.form-field--inline
+
+  .form-btn
+    display: block
+    min-width: 100%
+
+// ----- Input ----- //
+
+.form-input
+  background: $form-input-background
+  border-radius: $b-borderRadius
+  border: $form-shared-borderWidth $b-borderStyle darken($c-border, 8%)
+  box-sizing: border-box
+  font-family: $b-fontFamily-heading
+  font-size: 100%
+  line-height: $form-shared-lineHeight
+  padding: $b-space-s $b-space
+  position: relative
+  transition: $b-transition
+  width: 100%
+
+  &::placeholder
+    color: rgba($c-subdue, 0.5)
+    font-style: italic
+
+  &:focus
+    border-color: $c-highlight
+    outline: none
+
+// Dark
+
+.form-input--dark
+  background: $form-input--dark-background
+  border-color: transparent
+  color: $c-text-invert
+
+  &::placeholder
+    color: $form-input--dark-color
+
+  &:focus
+    background-color: $form-input--dark--focus-background
+    border-color: transparent
+    color: $c-text-invert
+
+    &::placeholder
+      color: $form-input--dark--focus-color
+
+// Invalid
+
+.form-input.is-invalid
+  border-color: $c-error
+
+  + p
+    color: $c-error
+    font-size: $b-fontSize-s
+    margin-top: $b-space-xs
+
+// ----- Instruction ----- //
+
+.form-instruction
+  color: $c-subdue
+  font-family: $b-fontFamily-heading
+  font-style: italic
+  margin-bottom: $b-space-s
+
+// ----- Label ----- //
+
+.form-label
+  color: $c-subdue
+  display: block
+  font-family: $b-fontFamily-heading
+  font-size: $b-fontSize-s
+  font-weight: $b-fontWeight-semibold
+  margin-bottom: $b-space-xs
+
+// ----- Textarea ----- //
+
+.form-textarea
+  resize: vertical
+  max-height: 40vh // FIXME: Magic number!
+
+  +respond-to($g-m)
+    max-height: none

@@ -1,0 +1,41 @@
+block current_nav
+  - current_page = 'About'
+
+block layout_variables
+  - pageTitle = 'About'
+
+extends /views/layouts/layout
+
+block content
+
+  section.row
+    .cell.cell--s.well.well--l.well--m--xl
+
+      img.db.mbl.mhc(src='/images/img-about.svg' alt='' width='634')
+
+      h1.mbm About
+
+      p
+        strong JavaScript.com
+        |  is a resource built by the 
+        a(href='https://www.codeschool.com') Code School
+        |  team for the
+        | JavaScript community. It is now and will always be free.
+
+      p
+        | Because JavaScript is a great language for coding beginners, we've
+        | gathered some of the best 
+        a(href='/resources') free learning resources
+        |  around and built a 
+        a(href='/try') JavaScript course
+        |  to help new developers get up and running.
+
+      p.
+        With the help of community members contributing content to the site,
+        JavaScript.com aims to also keep more advanced developers up to date on
+        news, frameworks, and libraries.
+
+      p
+        | If you have feedback on how we can improve the site, please 
+        a(href='/feedback') let us know
+        | . Together, we hope to build and shape the future of JavaScript.

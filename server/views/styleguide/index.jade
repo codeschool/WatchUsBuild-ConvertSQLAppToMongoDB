@@ -1,0 +1,287 @@
+block layout_variables
+  - pageTitle = 'Styleguide'
+
+extends /views/layouts/layout
+
+block content
+
+  ul.list.list--f.list--divided.list--divided--f
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h1.h.h--1.mbf Styleguide
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#typography Typography
+
+          .mbl
+            h3.h.h--3 Headings
+
+            h1.h.h--1 This is a first-level heading
+            h2.h.h--2 This is a second-level heading
+            h3.h.h--3 This is a third-level heading
+            h4.h.h--4 This is a fourth-level heading
+
+          h3.h.h--3 Body
+
+          p.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus
+            vitae risus vitae lorem iaculis placerat. Aliquam sit amet felis.
+            Etiam congue. Donec risus risus, pretium ac, tincidunt eu, tempor
+            eu, quam. Morbi blandit mollis magna.  Suspendisse eu tortor. Donec
+            vitae felis nec ligula blandit rhoncus. Ut a pede ac neque mattis
+            facilisis. Nulla nunc ipsum, sodales vitae, hendrerit non.
+
+          h4.h.h--4 Sizes
+
+          p.tss This is small text
+          p This is base text
+          p.tsl This is large text
+          p.tsxl This is extra large text
+          p.tsxxl This is extra, extra large text
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#bucket Bucket
+
+          h3.h.h--3 Base
+
+          .bucket.mbl
+            .bucket-media
+              img(src='https://placehold.it/80')
+            .bucket-content
+              p.mbf Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+          h3.h.h--3 Flag
+
+          .bucket.bucket--flag
+            .bucket-media
+              img(src='https://placehold.it/80')
+            .bucket-content
+              p.mbf Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#button Button
+
+          .g
+            .g-b.g-b--1of2
+
+              h3.h.h--3 Primary
+
+              .has-btn
+                a.btn.btn--a(href='#') Button
+
+                a.btn.btn--a.btn--a--bordered(href='#') Button
+
+            .g-b.g-b--1of2
+
+              h3.h.h--3 Secondary
+
+              a.btn.btn--b(href='#') Button
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#icon Icon
+
+          -
+            iconPartialIcons = [
+              'calendar',
+              'check',
+              'external',
+              'mail',
+              'play',
+              'rss',
+              'star',
+              'submit',
+              'twitter'
+            ]
+
+          each name in iconPartialIcons
+            - iconPartial = { name: name }
+            ul.list.list--inline.mbm
+              li.list-item
+                .dib.paxs
+                  include /views/partials/_icon
+              li.list-item
+                .dib.paxs.tcs
+                  include /views/partials/_icon
+              li.list-item
+                .dib.paxs.tch
+                  include /views/partials/_icon
+              li.list-item
+                .bc-bostonBlue.dib.paxs.tci
+                  include /views/partials/_icon
+              li.list-item
+                code= name
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#label Label
+
+          .g
+            .g-b.g-b--1of2
+
+              h3.h.h--3 Base
+
+              p.label Label text
+
+            .g-b.g-b--1of2
+
+              h3.h.h--3 Highlight
+
+              p.label.label--highlight Label text
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#link Link
+
+          .g
+            .g-b.g-b--1of3
+
+              h3.h.h--3 Base
+
+              .ptm
+                a.link(href='#') Link
+
+            .g-b.g-b--1of3
+
+              h3.h.h--3 Bordered
+
+              .ptm
+                a.link.link--bordered(href='#') Link
+
+            .g-b.g-b--1of3
+
+              h3.h.h--3 Inverted
+
+              .bc-bostonBlue.pam
+                a.link.link--inverted(href='#') Link
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#list List
+
+          h3.h.h--3 Base
+
+          .mbl
+            ul.list
+              li.list-item.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                Vivamus vitae risus vitae lorem iaculis placerat. Aliquam sit
+                amet felis. Etiam congue. Donec risus risus, pretium ac,
+              li.list-item.
+                Suspendisse eu tortor. Donec vitae felis nec ligula blandit
+                tincidunt eu, tempor eu, quam. Morbi blandit mollis magna.
+                rhoncus. Ut a pede ac neque mattis facilisis. Nulla nunc ipsum,
+              li.list-item.
+                Sodales vitae, hendrerit non, imperdiet ac, ante. Morbi sit amet
+                mi. Ut magna. Curabitur id est. Nulla velit. Sed consectetuer
+                sodales justo. Aliquam dictum gravida libero. Sed eu turpis. Nunc
+
+          h3.h.h--3 Divided
+
+          .mbl
+            ul.list.list--divided
+              li.list-item.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                Vivamus vitae risus vitae lorem iaculis placerat. Aliquam sit
+                amet felis. Etiam congue. Donec risus risus, pretium ac,
+              li.list-item.
+                Suspendisse eu tortor. Donec vitae felis nec ligula blandit
+                tincidunt eu, tempor eu, quam. Morbi blandit mollis magna.
+                rhoncus. Ut a pede ac neque mattis facilisis. Nulla nunc ipsum,
+              li.list-item.
+                Sodales vitae, hendrerit non, imperdiet ac, ante. Morbi sit amet
+                mi. Ut magna. Curabitur id est. Nulla velit. Sed consectetuer
+                sodales justo. Aliquam dictum gravida libero. Sed eu turpis. Nunc
+
+          h3.h.h--3 Inline
+
+          ul.list.list--inline.mbm
+            li.list-item Lorem ipsum
+            li.list-item Suspendisse
+            li.list-item Sodales vitae
+
+          h4.h.h--4 Divided
+
+          ul.list.list--inline.list--inline--divided
+            li.list-item Lorem ipsum
+            li.list-item Suspendisse
+            li.list-item Sodales vitae
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#sector Sector
+
+          .g.has-sector
+            .g-b.g-b--1of3.sector.sector--white
+              .well.well--xl
+
+                p Sector
+
+            .g-b.g-b--2of3.sector.sector--snow
+              .well.well--xl
+
+                p Sector
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#split Split
+
+          h3.h.h--3 Base
+
+          .split.mbl
+            .split-item
+              .split-cell
+                p.tsxxl.mbf Lorem ipsum dolor sit amet
+              .split-cell
+                p.mbf January 21, 2015
+
+          h3.h.h--3 Divided
+
+          ul.split.split--divided.mbl
+            - index = 3; while(index--)
+              li.split-item
+                .split-cell
+                  p.mbf Lorem ipsum dolor sit amet
+                .split-cell
+                  p.mbf January 21, 2015
+
+          h3.h.h--3 Middle
+
+          .split.split--middle
+            .split-item
+              .split-cell
+                p.tsxxl.mbf Lorem ipsum dolor sit amet
+              .split-cell
+                p.mbf January 21, 2015
+
+    li.list-item
+      .row
+        .cell.cell--s.well.well--l
+
+          h2.h.h--2.mbm#thumb Thumb
+
+          img.thumb(src='https://placehold.it/40')

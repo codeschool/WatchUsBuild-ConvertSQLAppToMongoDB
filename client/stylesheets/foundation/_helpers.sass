@@ -1,0 +1,227 @@
+// *************************************
+//
+//   Helpers
+//   -> Functions, Mixins, Extends, Animations
+//
+// *************************************
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// ----- Em ----- //
+// -> Converts pixel value to an em
+//
+// $target - the target pixel size
+// $context - the context font-size
+
+@function em($target, $context: $b-fontSize)
+  @if ($target == 0)
+    @return 0
+  @else
+    @return ($target / $context) * 1em
+
+// ----- Font Size ----- //
+// -> Calculates a font size percentage
+//
+// $target - value of desired font size in pixels
+
+@function font-size($target, $context: $b-fontSize)
+  @return percentage($target / $context)
+
+// ----- Opposite Position ----- //
+// -> Returns the opposite side
+//
+// $side - the side to return the opposite of
+
+@function opposite-position($side)
+  @if $side == 'top'
+    @return 'bottom'
+  @if $side == 'bottom'
+    @return 'top'
+  @if $side == 'left'
+    @return 'right'
+  @if $side == 'right'
+    @return 'left'
+
+// ----- Shade ----- //
+// -> Slightly darken a color
+//    via: http://sass-guidelin.es/#lightening-and-darkening-colors (modified)
+//
+// $color - the color to shade
+// $percentage - the percentage of black to add to `$color`
+
+@function shade($color, $percentage)
+  @return mix(black, $color, $percentage)
+
+// ----- Tint ----- //
+// -> Slightly lighten a color
+//    Via: http://sass-guidelin.es/#lightening-and-darkening-colors (modified)
+//
+// $color - the color to tint
+// $percentage - the percentage of white to add to `$color`
+
+@function tint($color, $percentage)
+  @return mix(white, $color, $percentage)
+
+// ----- z-index ----- //
+// -> http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+//
+// $element - the name of the element in the list
+// $list - the name of the list (defaults to `$zi-global`)
+
+@function zi($element, $list: $zi-global)
+  $index: index($list, $element)
+
+  @if $index
+    @return $index
+
+  @warn 'There is no item "#{$element}" in this list; choose one of: #{$list}'
+  @return null
+
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+// ----- Action ----- //
+// -> Sets clickable element defaults
+
+=action
+  border: 1px solid transparent
+  cursor: pointer
+  display: inline-block
+  text-align: center
+  text-decoration: none
+  user-select: none
+  white-space: nowrap
+
+// ----- Font Face ----- //
+// -> https://github.com/thoughtbot/bourbon/edit/master/app/assets/stylesheets/css3/_font-face.scss#
+//
+// $family - the font-family
+// $path - the font path
+// $weight - the font-weight
+// $style - the font-style
+// $asset-pipeline - use the Rails asset pipeline (boolean)
+
+=font-face($family, $path, $weight: normal, $style: normal, $asset-pipeline: true)
+  @font-face
+    font-family: $family
+    font-style: $style
+    font-weight: $weight
+    @if $asset-pipeline == true
+      src: font-url('#{$path}.eot')
+      src: font-url('#{$path}.eot?#iefix') format('embedded-opentype'), font-url('#{$path}.woff') format('woff'), font-url('#{$path}.ttf') format('truetype'), font-url('#{$path}.svg##{$family}') format('svg')
+    @else
+      src: url('#{$path}.eot')
+      src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg##{$family}') format('svg')
+
+// ----- List Reset ----- //
+// -> Removes default list styles
+
+=list-reset
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+// ----- Respond-to ----- //
+// -> Generates a media query
+//
+// $val - the breakpoint size
+// $query - the type of query ('min-width', 'max-width')
+// $media - the media type ('screen', 'print', etc.)
+// @content - the generated content within the mixin
+
+=respond-to($val, $query: min-width, $media: screen)
+  @media #{$media} and ($query: $val)
+    @content
+
+// ----- State ----- //
+// -> Combines state-related pseudo-classes
+//
+// $class - an optional state class ('is-active')
+
+=state($class: false)
+  @if $class
+    &:active, &:focus, &:hover, &.#{$class}
+      @content
+  @else
+    &:active, &:focus, &:hover
+      @content
+
+// -------------------------------------
+//   Extends
+// -------------------------------------
+
+// ----- Clearfix ----- //
+
+.group::after
+  clear: both
+  content: ''
+  display: table
+
+// ----- Ellipsis ----- //
+
+.ellipsis
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+// ----- Faux Hide ----- //
+
+.fauxHide
+  opacity: 0
+  overflow: hidden
+  visibility: hidden
+
+// ----- Faux Hide ----- //
+
+.fauxShow
+  opacity: 1
+  overflow: visible
+  visibility: visible
+
+// ----- List Reset ----- //
+
+.lr
+  +list-reset
+
+// ----- Semantic Hide ----- //
+
+.srt
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+
+// -------------------------------------
+//   Animations
+// -------------------------------------
+
+// ----- Flash ----- //
+
+@keyframes flash
+  0%, 100%
+    opacity: 1
+  50%
+    opacity: 0
+
+// ----- Rotate ----- //
+
+@keyframes rotate
+  from
+    transform: rotate(0)
+  to
+    transform: rotate(1turn)
+
+// ----- Slide ----- //
+
+// Left
+
+@keyframes slideLeft1of6
+  to
+    transform: translateX(-#{ percentage(1/6) })

@@ -1,0 +1,43 @@
+// *************************************
+//
+//   Link
+//   -> Actionable text
+//      CodePen: http://codepen.io/drewbarontini/pen/qEJNPv
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .link[bordered inverted|muted]
+//
+// *************************************
+
+.link
+  @extend %a
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Bordered ----- //
+
+.link--bordered
+  border-bottom: $link-border currentColor
+
+// ----- Inverted ----- //
+
+.link--inverted
+  color: $link--inverted-color
+
+  +state
+    color: $link--inverted--state-color
+
+// ----- State ----- //
+
+// Error
+
+.link--error
+  color: $c-error
+
+  +state
+    color: shade($c-error, 10%)

@@ -1,0 +1,359 @@
+// *************************************
+//
+//   Config
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+// ----- Open Sans ----- //
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700')
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Palette ----- //
+
+// Grayscale
+
+$black: #000
+$slate: #313d38
+$capeCod: #3e4942
+$auroMetalSaurus: #6d7d79
+$concrete: #efefef
+$snow: #f9f9f7
+$white: #fff
+
+// Blue
+
+$aqua: #9cd4de
+$bostonBlue: #309ab1
+$regent: #9cd4df
+
+// Cream
+
+$cream: #f8f4e3
+
+// Green
+
+$cucumber: #7eab67
+$fern: #57823f
+
+// Red
+
+$sienna: #e55c53
+
+// Yellow
+
+$tulip: #e5bb31
+$goldenDream: #f2d50a
+
+// ----- Base ----- //
+
+$c-background-invert: $black
+$c-background: $white
+$c-border: $concrete
+$c-error: $sienna
+$c-highlight: $tulip
+$c-selection: tint($goldenDream, 50%)
+$c-subdue: $auroMetalSaurus
+$c-success: $cucumber
+$c-text-invert: $white
+$c-text: $slate
+$c-warning: $tulip
+
+// ----- Components ----- //
+
+// Button
+
+$btn-background: $sienna
+$btn-borderColor: $sienna
+$btn-color: $c-text-invert
+
+$btn--b-background: $goldenDream
+$btn--b-borderColor: transparent
+
+$btn--c-background: $fern
+
+// Card
+
+$card-background: $c-background
+
+// Form
+
+$form-input-background: #fbfbfb
+$form-input--dark-color: $bostonBlue
+$form-input--dark--focus-color: shade($form-input--dark-color, 10%)
+$form-input--dark-background: shade($form-input--dark-color, 25%)
+$form-input--dark--focus-background: shade($form-input--dark-color, 30%)
+
+// Underline
+
+$underline-borderColor: $c-background
+$underline--alt-borderColor: currentColor
+$underline--alt-cover-background: $regent
+$underline-color: black
+$underline-cover-background: $c-highlight
+$underline--inverted-borderColor: $c-highlight
+$underline--inverted-cover-background: $c-background
+
+// Sector
+
+$sector--a-background: $white
+$sector--b-background: $snow
+
+// ----- Structures ----- //
+
+// Console
+
+$console-background: $c-text
+$console-color: $c-text-invert
+
+// Footer
+
+$footer-background: $slate
+
+// Header
+
+$header-background: $tulip
+
+// Inline Console
+
+$inlineConsole-input-background: $c-text
+$inlineConsole-correct-background: #7fab67
+$inlineConsole-incorrect-background: $sienna
+
+// Link
+
+$link-color: $c-highlight
+$link--state-color: darken($link-color, 15%)
+$link--inverted-color: $c-text-invert
+$link--inverted--state-color: rgba($link--inverted-color, 0.5)
+
+// Select
+
+$select-background: $form-input-background
+$select-color: $c-text
+$select-caret-color: rgba($select-color, 0.5)
+
+// ----- Vendor ----- //
+
+$tooltip-background: $slate
+$tooltip-color: $c-text-invert
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+// ----- Borders & Box Shadow ----- //
+
+$b-borderRadius: 6px
+$b-borderRadius-s: $b-borderRadius / 2
+$b-borderRadius-l: $b-borderRadius * 2
+$b-borderStyle: solid
+$b-borderWidth: 2px
+$b-borderWidth-s: 1px
+$b-borderWidth-l: 4px
+$b-borderWidth-xl: 8px
+$b-border: $b-borderWidth $b-borderStyle $c-border
+$b-border-s: $b-borderWidth-s $b-borderStyle $c-border
+$b-border-l: $b-borderWidth-l $b-borderStyle $c-border
+$b-boxShadow: 0 2px 0 rgba($c-text, 0.25)
+
+// ----- Typography ----- //
+
+// Family
+
+$b-fontFamily-heading: 'Open Sans', Arial, Helvetica, sans-serif
+$b-fontFamily-mono: 'Courier', 'Monaco', 'Consolas', 'Lucida Console', monospace
+$b-fontFamily: 'Open Sans', Arial, Helvetica, sans-serif
+
+// Size
+
+$b-fontSize: 16px
+$b-fontSize-xs: font-size(12px)
+$b-fontSize-s: font-size(14px)
+$b-fontSize-l: font-size(18px)
+$b-fontSize-xl: font-size(20px)
+$b-fontSize-xxl: font-size(22px)
+
+// Size: Headings
+
+$b-fontSize-h1: font-size(28px)
+$b-fontSize-h1-l: font-size(36px)
+$b-fontSize-h2: font-size(22px)
+$b-fontSize-h2-l: font-size(28px)
+$b-fontSize-h3: font-size(18px)
+$b-fontSize-h3-l: font-size(22px)
+$b-fontSize-h4: font-size(16px)
+$b-fontSize-h4-l: font-size(18px)
+$b-fontSize-hl: font-size(32px)
+$b-fontSize-hl-l: font-size(64px)
+
+// Weight
+
+$b-fontWeight: 400
+$b-fontWeight-bold: 700
+$b-fontWeight-light: 300
+$b-fontWeight-semibold: 600
+
+// Line Height
+
+$b-lineHeight: 1.5
+
+// ----- Settings ----- //
+
+$b-transition-duration: 0.3s
+$b-transition-timingFunction: ease-in-out
+$b-transition: $b-transition-duration $b-transition-timingFunction
+
+// ----- Sizing ----- //
+
+$b-maxWidth-l: em(1200px)
+$b-maxWidth: em(950px)
+$b-maxWidth-s: em(780px)
+$b-space: em(20px)
+$b-space-xs: $b-space * 0.25
+$b-space-s: $b-space * 0.5
+$b-space-l: $b-space * 2
+$b-space-xl: $b-space * 4
+$b-space-xxl: $b-space * 8
+
+// ----- Tools ----- //
+
+$tool-background-names: 'bostonBlue', 'regent', 'gold', 'slate', 'sienna', 'metal', 'cucumber', 'aqua', 'cream', 'snow'
+$tool-background-vars: $bostonBlue, $regent, $goldenDream, $slate, $sienna, $auroMetalSaurus, $cucumber, $aqua, $cream, $snow
+
+// ----- Z-index ----- //
+
+$zi-global: 'console', 'message', 'layout-curtain', 'layout-header', 'video-overlay', 'video'
+
+// -------------------------------------
+//   Global
+// -------------------------------------
+
+// ----- Footer ----- //
+
+$site-footer-height: em(325px)
+
+// ----- Header ----- //
+
+$site-header-height: 70px
+$site-header-height-l: 106px
+
+// -------------------------------------
+//   Components
+// -------------------------------------
+
+// ----- Button ----- //
+
+// Borders
+
+$btn-borderWidth: 1px
+$btn-borderRadius: 4px
+$btn-borderStyle: solid
+$btn-border: $btn-borderWidth $btn-borderStyle $btn-borderColor
+
+// ----- Form ----- //
+
+$form-shared-borderWidth: $b-borderWidth
+$form-shared-lineHeight: 1.5
+
+// ----- Grid ----- //
+
+// Breakpoints
+
+$g-s: em(480px)
+$g-m: em(800px)
+$g-l: em(1024px)
+
+// Settings
+
+$g-columns: 5
+$g-defaults: 's' $g-s, 'm' $g-m, 'l' $g-l
+$g-gutter: em(40px)
+$g-gutter-s: em(20px)
+$g-gutter-xs: em(10px)
+$g-silent: false
+
+// Selector
+
+$g-selector: if($g-silent, unquote("%"), unquote("."))
+
+// ----- Underline ----- //
+
+// Borders
+
+$underline-borderStyle: solid
+$underline-borderWidth: $b-borderWidth
+$underline-border: $underline-borderWidth $underline-borderStyle $underline-borderColor
+
+// Settings
+
+$underline-color-transition-duration: 0.3s
+
+// -------------------------------------
+//   Structures
+// -------------------------------------
+
+// ----- Completion List ----- //
+
+// Item
+
+$completionList-item-size: 22px
+$completionList-item-gutter: 12px
+$completionList-item-gutter-l: 20px
+$completionList-item-gutter-xl: 30px
+$completionList-item-borderWidth: 4px
+
+// ----- Console ----- //
+
+$console-cursor-size: 6px
+$console-fontSize: 14px
+$console-fontSize-l: 16px
+$console-height: 6em // FIXME: Magic number!
+$console-maxHeight: 300px // FIXME: Magic number!
+
+// ----- Course Layout ----- //
+
+$courseLayout-header-toggle-height: 30px
+$courseLayout-viewportHeight-l: em(1050px) // FIXME: Magic number!
+
+// ----- Error Hero ----- //
+
+$errorHero-bob-offset: 0.15vw
+
+// ----- Hero ----- //
+
+$hero-minHeight: 500px
+
+// ----- Inline Console ----- //
+
+$inlineConsole-transition-duration: 0.6s
+$inlineConsole-transition: $inlineConsole-transition-duration ease-in-out
+
+// ----- Link ----- //
+
+$link-borderWidth: 2px
+$link-borderStyle: solid
+$link-border: $link-borderWidth $link-borderStyle
+
+// ----- Select ----- //
+
+$select-borderRadius: $b-borderRadius
+$select-caret-size: 6px
+
+// -------------------------------------
+//   Vendor
+// -------------------------------------
+
+$tooltip-caretSize: 6px
+$tooltip-lineHeight: $b-lineHeight
+$tooltip-maxWidth: 200px
+$tooltip-opacity: 1
+$tooltip-positions: 'bottom', 'top'

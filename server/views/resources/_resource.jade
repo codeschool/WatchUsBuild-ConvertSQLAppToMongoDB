@@ -1,0 +1,19 @@
+- item = item || {}
+- item.title = item.title || 'Placeholder Title'
+- item.url = item.url || '#'
+- item.media = item.media || 'https://placehold.it/220x120'
+- item.description = item.description || ''
+
+li.list-item
+  article.g
+    .g-b.g-b--s--2of5.g-b--m--1of3
+      a(href="#{item.url}")
+        img.thumb.thumb--m(src="#{item.media}" alt="#{item.title}")
+    .g-b.g-b--s--3of5.g-b--m--2of3.mtm.mtf--s
+      h2.h.h--3
+        a.externalLink.tct.twb(href="#{item.url}")
+          = item.title
+          - iconPartial = { name: 'external', className: 'externalLink-icon', size: 16 }
+          include /views/partials/_icon
+
+      p.mbf= item.description

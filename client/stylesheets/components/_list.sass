@@ -1,0 +1,144 @@
+// *************************************
+//
+//   List
+//   -> Enumeration of items
+//      CodePen: http://codepen.io/drewbarontini/pen/ouqil
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %ul.list[divided inline|object styled|styled--numbered]
+//   %li.list-item List Item
+//   %li.list-item List Item
+//
+// *************************************
+
+.list
+  +list-reset
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Divided ----- //
+
+.list--divided
+
+  > .list-item
+    border-top: $b-border
+    padding-top: $b-space
+
+    &:first-child
+      border-top: 0
+      padding-top: 0
+
+  > .list-item--header
+    border-top: 0
+
+    + .list-item
+      border-top: 0
+      padding-top: 0
+
+// Sizes
+
+.list--divided--f
+
+  > .list-item
+    padding-top: 0
+
+.list--divided--s
+
+  > .list-item
+    padding-top: $b-space-s
+
+.list--divided--l
+
+  > .list-item
+    padding-top: $b-space-l
+
+// ----- Inline ----- //
+
+.list--inline
+
+  > .list-item
+    display: inline
+    margin-right: $b-space
+
+    &:last-child
+      margin-right: 0
+
+// Shared
+
+.list--inline--divided, .list--inline--dotted
+
+  > .list-item
+
+    &:not(:first-child)::before
+      margin-left: -1ch
+      margin-right: $b-space-s
+
+// Divided
+
+.list--inline--divided
+
+  > .list-item
+
+    &:not(:first-child)::before
+      content: '|'
+
+// Dotted
+
+.list--inline--dotted
+
+  > .list-item
+
+    &:not(:first-child)::before
+      content: '\b7'
+      font-weight: bold
+
+// ----- Sizes ----- //
+
+.list--f
+
+  > .list-item
+    margin-bottom: 0
+
+.list--s
+
+  > .list-item
+    margin-bottom: $b-space-s
+
+.list--l
+
+  > .list-item
+    margin-bottom: $b-space-l
+
+// ----- Styled ----- //
+
+.list--styled
+  padding-left: $b-space-l
+
+  > .list-item
+    display: list-item
+    list-style-type: disc
+    margin-bottom: $b-space-xs
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Item ----- //
+
+.list-item
+  display: block
+  margin-bottom: $b-space
+
+  &:last-child
+    margin-bottom: 0
+
+// Header
+
+.list-item--header
+  color: darken($c-border, 15%)
+  font-weight: $b-fontWeight-semibold

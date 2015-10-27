@@ -1,0 +1,146 @@
+// *************************************
+//
+//   Button
+//   -> Clickable control
+//      CodePen: http://codepen.io/drewbarontini/pen/yAveh
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .has-btn
+//
+// .btn[a|b s|l block bordered|rounded success]
+//
+// *************************************
+
+.btn
+  +action
+  background: $btn-background
+  border-radius: $btn-borderRadius
+  color: $btn-color
+  font-family: $b-fontFamily-heading
+  font-family: $b-fontFamily-heading
+  font-size: 100%
+  font-weight: $b-fontWeight-semibold
+  line-height: $b-lineHeight
+  padding: $b-space-s $b-space-l
+  transition: $b-transition
+
+  +state
+    background: shade($btn-background, 10%)
+    color: $btn-color
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Behavior ----- //
+
+// Block
+
+.btn--block
+  box-sizing: border-box
+  display: block
+  width: 100%
+
+// Inline
+
++respond-to($g-m)
+
+  .btn--m--inline
+    display: inline-block
+    width: auto
+
+// Rounded
+
+.btn--rounded
+  border-radius: 40px
+
+// ----- Hierarchy ----- //
+
+.btn--a--bordered
+  background: transparent
+  border-color: $btn-background
+  color: $btn-background
+
+  +state
+    background: $btn-background
+    color: $c-text-invert
+
+// Secondary
+
+.btn--b
+  background: $btn--b-background
+
+  +state
+    background: shade($btn--b-background, 10%)
+
+// ----- Sizes ----- //
+
+.btn--l
+  font-size: $b-fontSize-l
+
+// ----- Sticker ----- //
+
+.btn--sticker
+  $size: 24px
+  border-radius: 50%
+  height: $size
+  line-height: $size
+  padding: 0
+  position: relative
+  width: $size
+
+  > svg
+    left: 50%
+    position: absolute
+    top: 50%
+    transform: translate(-50%, -50%)
+
+// ----- Theme ----- //
+
+.btn--success
+  background: $c-success
+
+  +state
+    background: shade($c-success, 10%)
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// ----- Button ----- //
+
+.has-btn
+
+  > .btn
+    margin-right: $b-space-xs
+
+    &:last-child
+      margin-right: 0
+
+// ----- Icon ----- //
+
+.has-btn-icon
+  position: relative
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Icon ----- //
+
+.btn-icon
+  background: shade($btn-background, 25%)
+  left: $b-space-s
+  margin-right: $b-space-l
+  position: absolute
+
+  +state
+    background: shade($btn-background, 25%)
+
+// ----- Text ----- //
+
+.btn-text
+  padding-left: $b-space

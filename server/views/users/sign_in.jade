@@ -1,0 +1,18 @@
+block layout_variables
+  - pageTitle = 'Users'
+  - metaDescription = 'The latest news from the JavaScript community and the fine folks at 5 Minutes of JavaScript.'
+  - dispatcher = 'users:authenticate'
+
+extends /views/layouts/layout
+
+block content
+
+  section.row
+    .cell.cell--s.well.well--xl
+
+      img.db.mbl.mhc(src='/images/img-authentication.svg' alt='' width='221')
+
+      .tac
+        h1.h.h--1 Authenticate
+        p To create a post, sign in with GitHub by clicking the button below.
+        a.btn.btn--a(href='/sessions/auth/github') Sign In with GitHub

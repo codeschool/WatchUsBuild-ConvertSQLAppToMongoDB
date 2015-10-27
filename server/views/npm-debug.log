@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/Joel/.nvm/versions/io.js/v1.2.0/bin/npm',
+1 verbose cli   'start' ]
+2 info using npm@2.10.0
+3 info using node@v1.2.0
+4 verbose node symlink /Users/Joel/.nvm/versions/io.js/v1.2.0/bin/node
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info prestart JavaScript.com@0.0.0
+7 info start JavaScript.com@0.0.0
+8 verbose unsafe-perm in lifecycle true
+9 info JavaScript.com@0.0.0 Failed to exec start script
+10 verbose stack Error: JavaScript.com@0.0.0 start: `node --harmony_object_literals ./bin/www`
+10 verbose stack Exit status 1
+10 verbose stack     at EventEmitter.<anonymous> (/Users/Joel/.nvm/versions/io.js/v1.2.0/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+10 verbose stack     at emitTwo (events.js:85:13)
+10 verbose stack     at EventEmitter.emit (events.js:153:7)
+10 verbose stack     at ChildProcess.<anonymous> (/Users/Joel/.nvm/versions/io.js/v1.2.0/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+10 verbose stack     at emitTwo (events.js:85:13)
+10 verbose stack     at ChildProcess.emit (events.js:153:7)
+10 verbose stack     at maybeClose (child_process.js:984:16)
+10 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1057:5)
+11 verbose pkgid JavaScript.com@0.0.0
+12 verbose cwd /Users/Joel/cs/JavaScript.com/server/views
+13 error Darwin 14.5.0
+14 error argv "node" "/Users/Joel/.nvm/versions/io.js/v1.2.0/bin/npm" "start"
+15 error node v1.2.0
+16 error npm  v2.10.0
+17 error code ELIFECYCLE
+18 error JavaScript.com@0.0.0 start: `node --harmony_object_literals ./bin/www`
+18 error Exit status 1
+19 error Failed at the JavaScript.com@0.0.0 start script 'node --harmony_object_literals ./bin/www'.
+19 error This is most likely a problem with the JavaScript.com package,
+19 error not with npm itself.
+19 error Tell the author that this fails on your system:
+19 error     node --harmony_object_literals ./bin/www
+19 error You can get their info via:
+19 error     npm owner ls JavaScript.com
+19 error There is likely additional logging output above.
+20 verbose exit [ 1, true ]

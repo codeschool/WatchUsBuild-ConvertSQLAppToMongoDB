@@ -1,0 +1,92 @@
+// *************************************
+//
+//   JavaScript.com - MVCSS v4.0.15
+//   -> Manifest
+//
+// *************************************
+
+// -------------------------------------
+//   Foundation
+// -------------------------------------
+
+@import 'foundation/reset'
+@import 'foundation/helpers'
+@import 'foundation/config'
+@import 'foundation/base'
+@import 'foundation/tools'
+
+// -------------------------------------
+//   Components
+// -------------------------------------
+
+@import 'components/bucket'
+@import 'components/button'
+@import 'components/card'
+@import 'components/cell'
+@import 'components/form'
+@import 'components/grid'
+@import 'components/handle'
+@import 'components/list'
+@import 'components/pillar'
+@import 'components/row'
+@import 'components/sector'
+@import 'components/split'
+@import 'components/thumb'
+@import 'components/underline'
+@import 'components/well'
+
+// -------------------------------------
+//   Structures
+// -------------------------------------
+
+@import 'structures/alert'
+@import 'structures/completionList'
+@import 'structures/console'
+@import 'structures/course'
+@import 'structures/courseLayout'
+@import 'structures/emblem'
+@import 'structures/errorHero'
+@import 'structures/externalLink'
+@import 'structures/footer'
+@import 'structures/header'
+@import 'structures/heading'
+@import 'structures/hero'
+@import 'structures/icon'
+@import 'structures/inlineCode'
+@import 'structures/inlineConsole'
+@import 'structures/label'
+@import 'structures/link'
+@import 'structures/message'
+@import 'structures/newsletter'
+@import 'structures/preloader'
+@import 'structures/select'
+@import 'structures/state'
+@import 'structures/video'
+
+// -------------------------------------
+//   Vendor
+// -------------------------------------
+
+@import 'vendor/codemirror'
+@import 'vendor/codemirror-theme'
+@import 'vendor/tooltip'
+
+// -------------------------------------
+//   Inbox
+// -------------------------------------
+
+// Animations are handled using Angulars ng-animate which adds and
+// removes classes during various phases. If this doesn't work we can
+// do something different, but ng-animate is pretty crazy flexible in the timing
+// in code of where these happen if we need to tweak things.
+.animate--fade.ng-enter,
+.animate--fade.ng-leave
+  // transition: all 1s ease-in-out
+.animate--fade.ng-enter,
+.animate--fade.ng-leave.ng-leave-active
+  display: none
+  // opacity: 0
+.animate--fade.ng-leave,
+.animate--fade.ng-enter.ng-enter-active
+  display: block
+  // opacity: 1

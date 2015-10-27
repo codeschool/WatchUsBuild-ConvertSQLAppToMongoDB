@@ -1,0 +1,24 @@
+{
+  "name": "abecedary",
+  "version": "0.0.5",
+  "description": "Crossdomain JavaScript test runner for Mocha.",
+  "author": "Adam Fortuna",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeschool/abecedary.git"
+  },
+  "main": "index.js",
+  "license": "AAL",
+  "dependencies": {},
+  "devDependencies": {
+    "brfs": "^1.2.0",
+    "browserify": "3.32.0",
+    "chai": "~1.8.1",
+    "decomponentify": "~0.0.3",
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-shell": "~0.6.4",
+    "mocha": "~1.17.0",
+    "sinon": "~1.7.3"
+  }
+}

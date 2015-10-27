@@ -1,0 +1,86 @@
+block layout_variables
+  - pageTitle = 'Submit New Post'
+  - metaDescription = 'Submit a new post to JavaScript.com'
+  - dispatcher = 'news:new'
+
+extends /views/layouts/layout
+
+block content
+
+  .has-alert
+    include /views/partials/_flash
+
+  section.row
+    .cell.cell--m.well.well--l.well--m--xl
+
+      .g
+        .g-b.g-b--m--3of5
+
+          .split.split--middle.mbl
+            .split-item
+              .split-cell
+                h1.h.h--2.mbf New Story
+
+              .split-cell
+                .bucket.bucket--flag
+                  .bucket-media.tac
+                    img.thumb(src=avatar width=50)
+                  .bucket-content
+                    a.tfh(href='/users/signout') Not you?
+
+      .g
+        .g-b.g-b--m--3of5
+
+          form.form.js-formValidator.js-saveProgress-container(action='/news' method='POST')
+
+            fieldset.form-field
+              label
+                span.form-label Title
+              - titleValue = title ? title : ''
+              input.form-input.js-formValidator-input.js-saveProgress(type='text' name='title' data-validate='required' required='true' value=titleValue placeholder='Sundae.js 2.0 Released' data-saveprogress='news_title')
+
+            fieldset.form-field
+              label
+                span.form-label Link
+              - urlValue = url ? url : ''
+              input.form-input.js-formValidator-input.js-saveProgress(type='text' name='url' data-validate='required' required='true' value=urlValue placeholder='http://www.example.com' data-saveprogress='news_link')
+
+            fieldset.form-field
+              label
+                span.form-label Description
+
+              - bodyValue = body ? body : ''
+              textarea.form-input.form-textarea.js-autosize.js-counter.js-formValidator-input.js-saveProgress(name='body' rows=4 data-validate='required' required='true' placeholder="Today we released Sundae.js 2.0, which now has extra sprinkles, extra nuts, and now has three scoops of vanilla instead of two. If you can't eat dairy, you can now replace the ice cream with sherbert." data-saveprogress='news_description')
+                =bodyValue
+
+              .split
+                .split-cell
+                  p.mbf.tss.tcs.js-counter-message-max.is-hidden
+                    | Hmm, your description is a little long — it should be 
+                    strong no more than 300 characters
+                    | .
+
+                .split-cell
+                  span.tss.label.label--subdued.js-counter-label
+                    span.js-counter-number 0
+                    |  Characters
+
+            .mtl
+              input(type='hidden' name='_csrf' value=token)
+              input.btn.btn--a.form-btn.js-formValidator-submit(type='submit' value='Submit')
+
+        .g-b.g-b--m--2of5
+
+          .mtm
+            h2.h.h--3.mbs Guidelines
+
+            ul.list.list--styled.tss
+              li.list-item
+                strong Please use 
+                | 100-300 characters to describe why a JavaScript
+                | developer should care.
+              li.list-item
+                strong Please do not 
+                | submit advertisements about commercial products or job postings.
+              li.list-item
+                a(href='/guidelines') View all community guidelines &rarr;

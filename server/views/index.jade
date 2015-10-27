@@ -1,0 +1,48 @@
+block layout_variables
+  - dispatcher = 'home'
+
+extends /views/layouts/layout-bleed
+
+block content
+
+  .has-alert
+    include /views/partials/_flash
+
+  .row.hero.bc-regent
+    .cell.well.well--s--l
+
+      .mbxl.tac
+        h2.h.h--1.h--light.mbs Not exactly sure what JavaScript is?
+
+        a.btn.btn--rounded.has-btn-icon.js-video-trigger(href='#')
+          span.btn.btn--sticker.btn-icon
+            - iconPartial = { name: 'play', size: 18 }
+            include /views/partials/_icon
+          span.btn-text Learn More
+
+        .video.js-video
+          .video-embed
+            iframe.js-video-element(width='560' height='315' src='https://www.youtube.com/embed/nItSSTwBvSU' frameborder='0' allowfullscreen)
+
+      .g.ptl
+        .g-b.g-b--center.g-b--l--1of2
+
+          include /views/partials/_hero_console
+
+  .row
+    .cell.cell--m.well.well--l.well--m--xl
+      .g
+        .g-b.g-b--m--1of3.mbm.mbl--s.mbf--m
+
+          img.db.mhc(src='/images/img-newsletter.svg' alt='' width='244')
+
+        .g-b.g-b--m--2of3
+          h4.h.h--2.h--light.mtm--m Want the latest JavaScript news?
+
+          p.tfh
+            | Head over to our 
+            a(href='/news') news feed 
+            | or subscribe below to receive the latest updates from the 5&nbsp;Minutes
+            | of JavaScript newsletter and podcast.
+
+          include /views/partials/_newsletter_form

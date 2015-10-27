@@ -1,0 +1,446 @@
+// *************************************
+//
+//   Tools
+//   -> Global utilities
+//
+// *************************************
+
+// -------------------------------------
+//   Background
+// -------------------------------------
+
+.bch
+  background: $c-highlight !important
+.bci
+  background: $c-background-invert !important
+.bcs
+  background: $c-subdue !important
+
+// ----- Palette ----- //
+
+@for $i from 1 through length($tool-background-vars)
+
+  .bc-#{nth($tool-background-names, $i)}
+    background-color: nth($tool-background-vars, $i) !important
+
+// -------------------------------------
+//   Border
+// -------------------------------------
+
+// ----- All ----- //
+
+.bdr
+  border: $b-border !important
+.bdrs
+  border: $b-border-s !important
+
+// ----- Sides ----- //
+
+.bdrb
+  border-bottom: $b-border !important
+.bdrbl
+  border-bottom: $b-border-l !important
+.bdrtl
+  border-top: $b-border-l !important
+
+// -------------------------------------
+//   Display
+// -------------------------------------
+
+.db
+  display: block !important
+.di
+  display: inline !important
+.dib
+  display: inline-block !important
+.dn
+  display: none !important
+
+// Responsive
+
++respond-to($g-s)
+
+  .dib--s
+    display: inline-block !important
+
++respond-to($g-m)
+
+  .db--m
+    display: block !important
+  .di--m
+    display: inline !important
+  .dn--m
+    display: none !important
+
+// -------------------------------------
+//   Margins
+// -------------------------------------
+
+// ----- All ----- //
+
+.maxs
+  margin: $b-space-xs !important
+.mas
+  margin: $b-space-s !important
+.mam
+  margin: $b-space !important
+.mal
+  margin: $b-space-l !important
+.maxl
+  margin: $b-space-xl !important
+
+// ----- Bottom ----- //
+
+.mbf
+  margin-bottom: 0 !important
+.mbxs
+  margin-bottom: $b-space-xs !important
+.mbs
+  margin-bottom: $b-space-s !important
+.mbm
+  margin-bottom: $b-space !important
+.mbl
+  margin-bottom: $b-space-l !important
+.mbxl
+  margin-bottom: $b-space-xl !important
+
+// Responsive
+
++respond-to($g-s)
+
+  .mbl--s
+    margin-bottom: $b-space-l !important
+
++respond-to($g-m)
+
+  .mbf--m
+    margin-bottom: 0 !important
+  .mbm--m
+    margin-bottom: $b-space !important
+  .mbl--m
+    margin-bottom: $b-space-l !important
+  .mbxl--m
+    margin-bottom: $b-space-xl !important
+
++respond-to($g-l)
+
+  .mbf--l
+    margin-bottom: 0 !important
+
+// ----- Horizontal ----- //
+
+.mhc
+  margin-left: auto !important
+  margin-right: auto !important
+
+// ----- Left ----- //
+
+.mlf
+  margin-left: 0 !important
+.mlxs
+  margin-left: $b-space-xs !important
+.mls
+  margin-left: $b-space-s !important
+.mlm
+  margin-left: $b-space !important
+.mll
+  margin-left: $b-space-l !important
+
+// ----- Right ----- //
+
+.mrf
+  margin-right: 0 !important
+.mrxs
+  margin-right: $b-space-xs !important
+.mrs
+  margin-right: $b-space-s !important
+.mrm
+  margin-right: $b-space !important
+.mrl
+  margin-right: $b-space-l !important
+
+// Responsive
+
++respond-to($g-s)
+
+  .mrs--s
+    margin-right: $b-space-s !important
+
++respond-to($g-m)
+
+  .mrl--m
+    margin-right: $b-space-l !important
+
+// ----- Top ----- //
+
+.mtf
+  margin-top: 0 !important
+.mtxs
+  margin-top: $b-space-xs !important
+.mts
+  margin-top: $b-space-s !important
+.mtm
+  margin-top: $b-space !important
+.mtl
+  margin-top: $b-space-l !important
+.mtxl
+  margin-top: $b-space-xl !important
+
+// Responsive
+
++respond-to($g-s)
+  .mtf--s
+    margin-top: 0 !important
+
++respond-to($g-m)
+
+  .mts--m
+    margin-top: $b-space-s !important
+  .mtm--m
+    margin-top: $b-space !important
+  .mtl--m
+    margin-top: $b-space-l !important
+
+// -------------------------------------
+//   Opacity
+// -------------------------------------
+
+.op1of2
+  opacity: 0.5 !important
+
+// -------------------------------------
+//   Padding
+// -------------------------------------
+
+// ----- All ----- //
+
+.paxs
+  padding: $b-space-xs !important
+.pas
+  padding: $b-space-s !important
+.pam
+  padding: $b-space !important
+.pal
+  padding: $b-space-l !important
+.paxl
+  padding: $b-space-xl !important
+
+// Responsive
+
++respond-to($g-m)
+
+  .pal--m
+    padding: $b-space-l !important
+
+// ----- Bottom ----- //
+
+.pbf
+  padding-bottom: 0 !important
+.pbxs
+  padding-bottom: $b-space-xs !important
+.pbs
+  padding-bottom: $b-space-s !important
+.pbm
+  padding-bottom: $b-space !important
+.pbl
+  padding-bottom: $b-space-l !important
+.pbxl
+  padding-bottom: $b-space-xl !important
+
+// ----- Left ----- //
+
+.plf
+  padding-left: 0 !important
+.plxs
+  padding-left: $b-space-xs !important
+.pls
+  padding-left: $b-space-s !important
+.plm
+  padding-left: $b-space !important
+.pll
+  padding-left: $b-space-l !important
+
+// ----- Right ----- //
+
+.prf
+  padding-right: 0 !important
+.prxs
+  padding-right: $b-space-xs !important
+.prs
+  padding-right: $b-space-s !important
+.prm
+  padding-right: $b-space !important
+.prl
+  padding-right: $b-space-l !important
+
+// ----- Top ----- //
+
+.ptf
+  padding-top: 0 !important
+.ptxs
+  padding-top: $b-space-xs !important
+.pts
+  padding-top: $b-space-s !important
+.ptm
+  padding-top: $b-space !important
+.ptl
+  padding-top: $b-space-l !important
+.ptxl
+  padding-top: $b-space-xl !important
+
+// Responsive
+
++respond-to($g-m)
+
+  .ptxl--m
+    padding-top: $b-space-xl !important
+
++respond-to($g-l)
+
+  .ptxs--l
+    padding-top: $b-space-xs !important
+
+// -------------------------------------
+//   Positioning
+// -------------------------------------
+
+// ----- Float ----- //
+
+.fl
+  float: left !important
+.fr
+  float: right !important
+
+// Responsive
+
++respond-to($g-l)
+
+  .fr--l
+    float: right !important
+
+// ----- Position ----- //
+
+.poa
+  position: absolute !important
+.pof
+  position: fixed !important
+.por
+  position: relative !important
+.pos
+  position: static !important
+
+// ----- Top ----- //
+
+// Negative
+
+.potmn
+  top: -$b-space
+
+.pot2n
+  top: -2px !important
+
+// -------------------------------------
+//   Rounding
+// -------------------------------------
+
+.ra
+  border-radius: 50% !important
+.ram
+  border-radius: $b-borderRadius !important
+.ran
+  border-radius: 0 !important
+.ras
+  border-radius: $b-borderRadius-s !important
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+// ----- Alignment ----- //
+
+.tac
+  text-align: center !important
+.tar
+  text-align: right !important
+
+// ----- Color ----- //
+
+.tce
+  color: $c-error !important
+.tch
+  color: $c-highlight !important
+.tci
+  color: $c-text-invert !important
+.tcs
+  color: $c-subdue !important
+.tct
+  color: $c-text !important
+
+// Hover
+
+.tc-ht
+
+  +state
+    color: $c-text !important
+
+// ----- Family ----- //
+
+.tfb
+  font-family: $b-fontFamily !important
+.tfh
+  font-family: $b-fontFamily-heading !important
+
+// ----- Size ----- //
+
+.tsxs
+  font-size: $b-fontSize-xs !important
+.tss
+  font-size: $b-fontSize-s !important
+.tsl
+  font-size: $b-fontSize-l !important
+.tsxl
+  font-size: $b-fontSize-xl !important
+.tsxxl
+  font-size: $b-fontSize-xxl !important
+
+// ----- Style ----- //
+
+.tsi
+  font-style: italic !important
+
+// ----- Transform ----- //
+
+.ttu
+  text-transform: uppercase !important
+
+// ----- Weight ----- //
+
+.twb
+  font-weight: $b-fontWeight-bold !important
+.twl
+  font-weight: $b-fontWeight-light !important
+.twn
+  font-weight: $b-fontWeight !important
+.twsb
+  font-weight: $b-fontWeight-semibold !important
+
+// -------------------------------------
+//   Whitespace
+// -------------------------------------
+
+.wsnw
+  white-space: nowrap !important
+
+// -------------------------------------
+//   Width
+// -------------------------------------
+
+// ----- Max Width ----- //
+
+.mwn
+  max-width: none !important
+
+// ----- Width ----- //
+
+.w-1of1
+  width: 100% !important

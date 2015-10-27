@@ -1,0 +1,99 @@
+// *************************************
+//
+//   Message
+//   -> Contextual instruction
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .message
+//   .message-text
+//   .message-icon
+//     .message-icon-item
+//
+// *************************************
+
+.message
+  pointer-events: none
+  position: fixed
+  top: 0
+  z-index: zi('message')
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Icon ----- //
+
+.message-icon
+  margin-left: -75px
+  margin-top: -75px
+  position: fixed
+  top: 50vh
+
+// Scaffolding
+
+// Scaffolding: Item
+
+.message-icon-item
+  animation: message-icon-item 1s ease-in-out both
+  background: $c-success
+  border-radius: 50%
+  border: 15px solid white
+  box-sizing: border-box
+  display: block
+  height: 150px
+  width: 150px
+
+// ----- Text ----- //
+
+.message-text
+  animation: message-icon-text 1.7s ease-in-out both
+  background: $c-success
+  border-radius: 10px
+  box-sizing: border-box
+  color: white
+  display: block
+  font-size: 24px
+  font-weight: bold
+  left: 50vw
+  line-height: 100px
+  position: fixed
+  text-align: center
+  top: 50vh
+  transform: translate(-50%, -50%)
+  width: 300px
+
+  +respond-to($g-m)
+    font-size: 36px
+    line-height: 120px
+    width: 400px
+
+// -------------------------------------
+//   Animations
+// -------------------------------------
+
+// ----- Icon ----- //
+
+// Item
+
+@keyframes message-icon-item
+  0%
+    opacity: 0
+    transform: translateY(100%)
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: translateY(-100%)
+
+// Message
+
+@keyframes message-icon-text
+  0%
+    opacity: 0
+  25%, 75%
+    opacity: 1
+  100%
+    opacity: 0

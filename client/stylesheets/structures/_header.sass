@@ -1,0 +1,43 @@
+// *************************************
+//
+//   Header
+//   -> Primary brand and navigation
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .header
+//
+//   %a.header-link
+//
+// *************************************
+
+.header
+  background: $header-background
+  height: $site-header-height
+
+  +respond-to($g-m)
+    height: $site-header-height-l
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Link ----- //
+
+.header-link
+  border-bottom: $b-borderWidth $b-borderStyle transparent
+  color: $c-text-invert
+  font-family: $b-fontFamily-heading
+  margin-right: $b-space
+
+  +respond-to($g-m)
+    margin-right: $b-space-l
+
+  +state('is-active')
+    border-bottom-color: $c-text-invert
+    color: $c-text-invert
+
+  &:last-child
+    margin-right: 0

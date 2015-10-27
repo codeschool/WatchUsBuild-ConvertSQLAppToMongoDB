@@ -1,0 +1,90 @@
+block current_nav
+  - current_page = 'Asset Downloads'
+
+block layout_variables
+  - pageTitle = 'Asset Downloads'
+
+extends /views/layouts/layout
+
+block content
+
+  section.row
+    .cell.cell--s.well.well--l.well--m--xl
+
+      .bdrbl.mbl.pbm
+        h1 Asset Downloads
+        p Below you'll find some of the assets we've created for JavaScript.com.
+
+      .mbxl
+        h2.mbm Logos
+
+        .card.card--l.bdrs.mbm.ras.has-pin
+          img.db.mhc(src='/images/brand/logo.svg' alt='JavaScript.com' width='575')
+
+        .g.g--s.mbl
+          .g-b.g-b--m--3of4.mbm.mbf--m
+            .card.card--l.bc-gold.ras.has-pin
+              img.db.mhc(src='/images/brand/logo-light.svg' alt='JavaScript.com' width='375')
+          .g-b.g-b--m--1of4.mbm.mbf--m
+            .card.card--l.bc-slate.ras.has-pin
+              img.db.mhc(src='/images/brand/logo-mark.svg' alt='JavaScript.com' width='91')
+
+        .tac
+          a.btn.mbs(href='/downloads/package.zip') Download Logos
+          p.tcs.tss You will receive a ZIP file with all logos in PNG and EPS format.
+
+      h2.mbm Primary Colors
+
+      .g.g--xs.mbxl
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-gold.ras
+            p.mtl--m
+              strong Yellow
+            p.mbf.tss RGB: 242, 213, 10
+            p.mbf.mbm--m.tss HEX: #f2d50a
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-slate.ras.tci
+            p.mtl--m
+              strong Dark Gray
+            p.mbf.tss RGB: 49, 61, 56
+            p.mbf.mbm--m.tss HEX: #313d38
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-metal.ras.tci
+            p.mtl--m
+              strong Gray
+            p.mbf.tss RGB: 109, 125, 121
+            p.mbf.mbm--m.tss HEX: #6d7d79
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-sienna.ras.tci
+            p.mtl--m
+              strong Red
+            p.mbf.tss RGB: 229, 92, 83
+            p.mbf.mbm--m.tss HEX: #e55c53
+
+      h2.mbm Secondary Colors
+
+      .g.g--xs
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-cream.ras
+            p.mbs
+              strong Off-White
+            p.mbf.tss RGB: 248, 244, 227
+            p.mbf.tss HEX: #f8f4e3
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-aqua.ras
+            p.mbs
+              strong Blue
+            p.mbf.tss RGB: 156, 212, 222
+            p.mbf.tss HEX: #9cd4de
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-cucumber.ras.tci
+            p.mbs
+              strong Green
+            p.mbf.tss RGB: 126, 171, 103
+            p.mbf.tss HEX: #7eab67
+        .g-b.g-b--s--1of2.g-b--m--1of4.mbs.mbf--m
+          .card.bc-bostonBlue.ras.tci
+            p.mbs
+              strong Navy Blue
+            p.mbf.tss RGB: 48, 154, 177
+            p.mbf.tss HEX: #379aaf

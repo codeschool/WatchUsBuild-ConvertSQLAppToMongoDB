@@ -1,0 +1,15 @@
+{
+  "name": "javascript-logging",
+  "description": "Demo using JavaScript with console.log.",
+  "keywords": [],
+  "dependencies": { },
+  "license": "AAL",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "code.js",
+    "tests.js",
+    "answer.js",
+    "iframe.js"
+  ]
+}

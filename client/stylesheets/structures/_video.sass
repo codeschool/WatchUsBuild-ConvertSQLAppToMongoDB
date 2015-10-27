@@ -1,0 +1,99 @@
+// *************************************
+//
+//   Video
+//   -> Video modal
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// (video-playing)
+//
+// .video
+//
+// *************************************
+
+.video
+  @extend .fauxHide
+  box-sizing: border-box
+  left: 50%
+  max-width: 960px
+  padding: 0
+  position: fixed
+  top: 50%
+  transform: translate(-50%, -40%)
+  transition: all 0.3s ease-in-out
+  width: 100%
+  z-index: zi('video')
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Playing ----- //
+
+.is-video-playing
+  overflow: hidden
+
+  .video,
+  .video-close,
+  .video-overlay
+    @extend .fauxShow
+
+  .video
+    transform: translate(-50%, -50%)
+    transition: all 0.3s 0.5s ease-in-out
+
+  .video-close
+    transform: scale(1)
+    transition: all 0.5s 0.7s ease-in-out
+
+  .video-overlay
+    opacity: 0.9
+    transition: all 0.5s ease-in-out
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Close ----- //
+
+.video-close
+  @extend .fauxHide
+  color: $c-text-invert
+  display: block
+  font-size: $b-fontSize-h1
+  position: fixed
+  right: $b-space-s
+  top: 0
+  transform: scale(0.5)
+  transition: all 0.3s ease-in-out
+
+// ----- Embed ----- //
+
+.video-embed
+  height: 0
+  overflow: hidden
+  padding-bottom: 56.25% // 16:9
+
+  iframe, object, embed
+    left: 0
+    height: 100%
+    position: absolute
+    top: 0
+    width: 100%
+
+// ----- Overlay ----- //
+
+.video-overlay
+  @extend .fauxHide
+  background: $c-highlight
+  bottom: 0
+  height: 100%
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+  transition: all 0.3s 0.5s ease-in-out
+  width: 100%
+  z-index: zi('video-overlay')

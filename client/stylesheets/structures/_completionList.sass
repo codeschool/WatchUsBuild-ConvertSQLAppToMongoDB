@@ -1,0 +1,111 @@
+// *************************************
+//
+//   Completion List
+//   -> Linear checklist
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %ul.completionList
+//   %li.completionList-item
+//     %a.completionList-item-link
+//
+// *************************************
+
+.completionList
+  +list-reset()
+  @extend .group
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Item ----- //
+
+.completionList-item
+  background-color: $c-background
+  border-radius: 50%
+  border: $completionList-item-borderWidth solid $c-border
+  box-sizing: border-box
+  color: $c-text-invert
+  display: inline-block
+  float: left
+  height: $completionList-item-size
+  margin-bottom: 0
+  margin-right: $completionList-item-gutter
+  position: relative
+  width: $completionList-item-size
+
+  &::before
+    background-color: $c-border
+    content: ''
+    height: $completionList-item-borderWidth
+    pointer-events: none
+    position: absolute
+    right: calc(100% + #{$completionList-item-borderWidth})
+    top: calc(50% - #{$completionList-item-borderWidth / 2})
+    width: $completionList-item-gutter
+
+    +respond-to($g-s)
+      width: $completionList-item-gutter-l
+
+    +respond-to($g-m)
+      width: $completionList-item-gutter-xl
+
+  &:first-child
+
+    &::before
+      content: none
+
+  &:last-child
+    margin-right: 0
+
+  +respond-to($g-s)
+    margin-right: $completionList-item-gutter-l
+
+  +respond-to($g-m)
+    margin-right: $completionList-item-gutter-xl
+
+// States
+
+// States: Active
+
+.completionList-item.is-active
+  border-color: $c-highlight
+
+  &::before
+    background-color: $c-highlight
+
+// States: Completed
+
+.completionList-item.is-completed
+  background-color: $c-success
+  border-color: $c-success
+
+  &::before
+    background-color: $c-success
+
+  .completionList-item-icon
+    display: block
+
+// Scaffolding
+
+// Scaffolding: Icon
+
+.completionList-item-icon
+  display: none
+  left: 50%
+  position: absolute
+  top: 50%
+  transform: translate(-50%, -50%)
+
+// Scaffolding: Link
+
+.completionList-item-link
+  bottom: -$completionList-item-borderWidth
+  cursor: pointer
+  left: -$completionList-item-borderWidth
+  position: absolute
+  right: -$completionList-item-borderWidth
+  top: -$completionList-item-borderWidth

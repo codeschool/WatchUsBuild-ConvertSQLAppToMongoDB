@@ -1,0 +1,112 @@
+// *************************************
+//
+//   Base
+//   -> Tag-level settings
+//
+// *************************************
+
+html
+  background: $c-background
+  color: $c-text
+  font-family: $b-fontFamily
+  font-feature-settings: 'kern'
+  font-size: $b-fontSize
+  line-height: $b-lineHeight
+
+  +respond-to($g-l)
+    min-height: 100%
+    position: relative
+
+body
+  font-size: 100%
+
+  +respond-to($g-l)
+    margin-bottom: $site-footer-height
+
+// -------------------------------------
+//   Block Content
+// -------------------------------------
+
+// ----- Lists, Paragraphs ----- //
+
+ol, ul, p
+  margin-bottom: $b-space
+  margin-top: 0
+
+li
+  margin-bottom: $b-space-s
+  margin-top: 0
+
+// ----- Headings ----- //
+
+h1, h2, h3, h4, %h
+  font-family: $b-fontFamily-heading
+  font-weight: $b-fontWeight-bold
+  line-height: 1.2
+  margin-bottom: $b-space-xs
+  margin-top: 0
+
+// ----- Preformatted Text ----- //
+
+pre
+  font-family: $b-fontFamily-mono
+
+// -------------------------------------
+//   Inline Content
+// -------------------------------------
+
+// ----- Inputs ----- //
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='text'],
+textarea
+  -webkit-appearance: none
+  box-sizing: border-box
+
+// ----- Links ----- //
+
+a, %a
+  background: 0
+  border: 0
+  color: $c-highlight
+  display: inline
+  font-weight: $b-fontWeight-semibold
+  line-height: inherit
+  padding: 0
+  text-decoration: none
+  transition: $b-transition
+
+  +state
+    color: darken($c-highlight, 10%)
+
+// ----- Media ----- //
+
+// Shared
+
+img, svg
+  max-width: 100%
+  vertical-align: middle
+
+// Images
+
+img
+  height: auto
+
+// ----- Selection ----- //
+
+::selection
+  background: $c-selection
+
+// ----- Text ----- //
+
+strong, b
+  font-weight: $b-fontWeight-bold
+
+em, i
+  font-style: italic
+
+code, kbd
+  font-family: $b-fontFamily-mono

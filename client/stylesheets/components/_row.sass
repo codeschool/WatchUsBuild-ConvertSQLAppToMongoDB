@@ -1,0 +1,36 @@
+// *************************************
+//
+//   Row
+//   -> Width-spanning blocks
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .row[a|b]
+//   / ...
+//
+// *************************************
+
+.row
+  overflow: hidden
+  padding: 0 $b-space-s
+
+  +respond-to($g-s)
+    padding: 0 $b-space
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Theme ----- //
+
+// Primary
+
+.row--a
+  background: $c-highlight
+
+// Secondary
+
+.row--b
+  background: $c-subdue

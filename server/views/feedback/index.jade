@@ -1,0 +1,64 @@
+block current_nav
+  - current_page = 'Feedback'
+
+block layout_variables
+  - dispatcher = 'feedback'
+  - pageTitle = 'Feedback'
+
+extends /views/layouts/layout
+
+block content
+
+  section.row
+    .cell.cell--s.well.well--l
+
+      .card.bdr.mbl
+        h3 JavaScript.com is not responsible for the JavaScript language
+        p.mbf.tss
+          | If you are having an issue with JavaScript on your computer, you will 
+          | need to contact the site owner about issues with their site. This
+          | form is 
+          em only 
+          | for feedback about the JavaScript.com site itself.
+
+      .mbl
+        h1 Feedback
+        .tss
+          p.mbs
+            | If you would like to request a feature for JavaScript.com,
+            | head over to our 
+            a(href='https://jscom.uservoice.com/') discussion page
+            | .
+          p For any other site feedback or assistance, please submit your request below.
+
+      form.form.js-formValidator.js-saveProgress-container(id='form70' name='form70' accept-charset='UTF-8' autocomplete='off' enctype='multipart/form-data' method='post' action='https://codeschool.wufoo.com/forms/p14727kn1c9coto/#public')
+
+        .g
+          .g-b.g-b--m--1of2
+
+            fieldset.form-field.mbl--m
+              label.form-label(for='email' id='Field4') Email
+              input.form-input.js-formValidator-input.js-saveProgress(name='Field4' id='Field4' type='email' required='true' data-validate='required' data-saveprogress='feedback_email')
+
+          .g-b.g-b--m--1of2
+
+            fieldset.form-field.mbl--m
+              label.form-label(for='type' id='Field5') Type of Feedback
+
+              .select
+                select.form-select.select-input(id='Field5' name='Field5' required='true')
+                  option.select-input-option(value='' selected='selected')
+                  option.select-input-option(value='General Feedback') General Feedback
+                  option.select-input-option(value='Report Bug') Report Bug
+                  option.select-input-option(value='Report Abuse') Report Abuse
+                  option.select-input-option(value='Interested in Helping') Interested in Helping
+
+        fieldset.form-field.mbl--m
+          label.form-label(for='comment' id='Field1') Give us your feedback to help us improve the site.
+          textarea.form-input.form-textarea.js-autosize.js-formValidator-input.js-saveProgress(name='Field1' id='Field1' rows='8' required='true' data-validate='required' data-saveprogress='feedback_content')
+
+        input.btn.js-formValidator-submit(id='saveForm' name='saveForm' type='submit' value='Submit')
+
+        .dn
+          input(type='hidden' id='idstamp' name='idstamp' value='mAsIlUCmWuyO8I0NS7YobFDrEoc8cCW1OsaZoNtqhvI=')
+          textarea(name='comment' id='comment' rows='1' cols='1')

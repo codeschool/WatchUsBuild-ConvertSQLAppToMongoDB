@@ -1,0 +1,74 @@
+// *************************************
+//
+//   Error Hero
+//   -> 404 page illustration row
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .errorHero
+//   .errorHero-img
+//     .errorHero-img-boat
+//     .errorHero-img-ocean
+//
+// *************************************
+
+.errorHero
+  background: $regent
+  box-sizing: border-box
+  padding-bottom: $b-space-xl
+  position: relative
+
+  +respond-to($g-s)
+    padding-bottom: $b-space-xxl
+
+  +respond-to($g-l)
+    min-height: calc(100vh - #{$site-header-height-l} - #{$site-footer-height})
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Image ----- //
+
+.errorHero-img
+  $errorHero-img-width: 90vw
+  bottom: 0
+  height: calc(100vh - #{$site-header-height-l} - #{$site-footer-height})
+  left: (100 - $errorHero-img-width) / 2
+  max-width: none
+  position: absolute
+  width: $errorHero-img-width
+
+  @media screen and (min-aspect-ratio: 3 / 2)
+    $errorHero-img-width-l: 70vw
+    left: (100 - $errorHero-img-width-l) / 2
+    width: $errorHero-img-width-l
+
+// Scaffolding
+
+// Scaffolding: Boat
+
+.errorHero-img-boat
+  animation: errorHero-img-boat 1.25s ease-in-out infinite alternate
+  transform-origin: center
+
+// Scaffolding: Ocean
+
+.errorHero-img-ocean
+  animation: slideLeft1of6 2.5s linear infinite
+
+// ------------------------------------
+//   Animations
+// ------------------------------------
+
+// ----- Image ----- //
+
+// Boat
+
+@-webkit-keyframes errorHero-img-boat
+  from
+    transform: translateY(-$errorHero-bob-offset) rotate(-2deg)
+  to
+    transform: translateY($errorHero-bob-offset) rotate(1deg)

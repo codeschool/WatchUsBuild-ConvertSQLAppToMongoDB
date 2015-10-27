@@ -1,0 +1,82 @@
+// *************************************
+//
+//   Newsletter
+//   -> Description
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// (.has-newsletter)
+//
+// .newsletter[modifier](state)
+//   .newsletter-scaffolding
+//
+// *************************************
+
+.newsletter
+  position: relative
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// .newsletter--modifier
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Submitted ----- //
+
+.newsletter.is-submitted
+
+  .newsletter-form
+    opacity: 0
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// .has-newsletter
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Form ----- //
+
+.newsletter-form
+  transition: $b-transition
+
+// ----- Text ----- //
+
+.newsletter-text
+  animation: newsletter-text 0.4s 0.15s ease-in-out both
+  background: $c-success
+  border-radius: $b-borderRadius
+  box-sizing: border-box
+  color: $c-text-invert
+  font-weight: $b-fontWeight-semibold
+  left: 50%
+  padding: $b-space-s $b-space
+  position: absolute
+  text-align: center
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+
+// -------------------------------------
+//   Animations
+// -------------------------------------
+
+// ----- Text ----- //
+
+@keyframes newsletter-text
+  from
+    opacity: 0
+    transform: translate(-50%, 0)
+  to
+    opacity: 1
+    transform: translate(-50%, -50%)
+

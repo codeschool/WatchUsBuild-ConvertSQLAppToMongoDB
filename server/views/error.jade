@@ -1,0 +1,13 @@
+extends /views/layouts/layout
+
+block content
+
+  .row
+    .well.well--l.cell
+
+      h1.h.h--1= message
+
+      if error.status
+        p= error.status
+
+      pre= error.stack

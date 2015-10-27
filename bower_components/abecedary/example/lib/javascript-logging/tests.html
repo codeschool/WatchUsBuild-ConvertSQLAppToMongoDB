@@ -1,0 +1,42 @@
+var assert = require('chai').assert,
+    sinon = require('sinon'),
+    Sandbox = require('javascript-sandbox'),
+    jshint = require('jshint').JSHINT;
+
+describe('console.log', function() {
+  var sandbox, consoleLogStub;
+
+  beforeEach(function() {
+    try {
+      consoleLogStub = sinon.spy();
+      sandbox = new Sandbox({
+        variables: {
+          'console.log': consoleLogStub
+        }
+      });
+      sandbox.evaluate(code);
+    } catch(e) {}
+  });
+  
+  afterEach(function() {
+    try {
+      sandbox.destroy();
+    } catch(e) {}
+  });
+
+  details('console.log', function() {
+    return consoleLogStub.args;
+  });
+
+  it("Looks like there's a syntax error in your code.", function() {
+    if(!jshint(code)) { throw jshint.errors[0]; }
+  });
+
+  it("Did not call `console.log`, passing in a message.", function() {
+    assert(consoleLogStub.callCount > 0);
+  });
+
+  it("Did not pass in the message `Hello, World!` to `console.log`.", function() {
+    assert(consoleLogStub.calledWith('Hello, World!'));
+  });
+});

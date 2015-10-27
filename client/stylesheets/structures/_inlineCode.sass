@@ -1,0 +1,49 @@
+// *************************************
+//
+//   Inline Code
+//   -> Decorated snippet
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %code.inlineCode[btn]
+//   .inlineCode-icon
+//
+// *************************************
+
+.inlineCode
+  background: none
+  border-radius: 4px
+  border: 1px solid $c-highlight
+  display: inline-block
+  padding-left: 0.5ch
+  padding-right: 0.5ch
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Button ----- //
+
+.inlineCode--btn
+  +action
+  border: 2px solid $c-highlight
+  padding: $b-space-xs $b-space
+  text-align: left
+  transition: $b-transition
+  white-space: normal
+
+  +state
+    background-color: $c-highlight
+    color: $c-text-invert
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Icon ----- //
+
+.inlineCode-icon
+  margin-right: $b-space-xs
+  opacity: 0.67

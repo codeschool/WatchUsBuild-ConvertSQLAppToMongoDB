@@ -1,0 +1,66 @@
+// *************************************
+//
+//   Layout
+//   -> Interface sections
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %html.layout(layout-header-fixed layout-primary-active)
+//   .layout-curtain
+//
+//   .layout-primary
+//      // ...
+//
+//   .layout-secondary
+//      // ...
+//
+// *************************************
+
+.layout
+  box-sizing: border-box
+  min-height: 100%
+  position: relative
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Header Fixed ----- //
+
+.layout.is-layout-header-fixed
+
+  +respond-to($g-m)
+    padding-top: $site-header-height-l
+
+    .layout-header
+      left: 0
+      position: fixed
+      right: 0
+      top: 0
+
+.layout.is-layout-primary-active
+
+  .layout-secondary
+    display: none
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Curtain ----- //
+
+.layout-curtain
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+  z-index: zi('layout-curtain')
+
+// ----- Header ----- //
+
+.layout-header
+  position: relative
+  z-index: zi('layout-header')

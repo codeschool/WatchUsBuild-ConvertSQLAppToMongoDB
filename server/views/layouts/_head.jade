@@ -1,0 +1,30 @@
+- headPartial = headPartial || {}
+- headPartial.userScalable = headPartial.fixedViewport || true
+- pageTitle = pageTitle || null
+- metaDescription = metaDescription || null
+
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+  if metaDescription
+    meta(name='description' content=metaDescription)
+  else
+    meta(name='description' content='Learn JavaScript and stay connected with the latest news created and curated by the JavaScript community.')
+
+  if headPartial.fixedViewport
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+  else
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+  meta(property='og:site_name' content='JavaScript.com' )
+  meta(property='og:url' content='https://www.javascript.com' )
+  meta(property='og:description' content='Learn JavaScript and stay connected with the latest news created and curated by the JavaScript community.' )
+  meta(property='og:image' content='/images/fb.png' )
+
+  if pageTitle
+    title=pageTitle + ' - ' + 'JavaScript.com'
+  else
+    title JavaScript.com
+
+  link(rel='shortcut icon' href='/images/favicon.ico')
+  link(rel='stylesheet' href='/stylesheets/application.css')

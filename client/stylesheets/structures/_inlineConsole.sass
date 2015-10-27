@@ -1,0 +1,129 @@
+// *************************************
+//
+//   Inline Console
+//   -> Single-line console input
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .inlineConsole(correct|incorrect)
+//
+//   .inlineConsole-icon
+//   .inlineConsole-input
+//
+// *************************************
+
+.inlineConsole
+  position: relative
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Correct ----- //
+
+.inlineConsole.is-correct
+
+  .inlineConsole-btn
+    background: $btn--c-background
+    opacity: 1
+    transform: translateX(0)
+    visibility: visible
+
+  .inlineConsole-icon--caret
+    opacity: 0
+    visibility: hidden
+
+  .inlineConsole-icon--check
+    opacity: 1
+    transform: translateY(-50%)
+    visibility: visible
+
+  .inlineConsole-input
+    background: $inlineConsole-correct-background
+    padding-left: $b-space-l
+
+// ----- Incorrect ----- //
+
+.inlineConsole.is-incorrect
+
+  .inlineConsole-input
+    background: $inlineConsole-incorrect-background
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Button ----- //
+
+.inlineConsole-btn
+  left: 0
+  line-height: 2.5
+  opacity: 0
+  padding: 0 $b-space
+  position: absolute
+  top: 110%
+  transform: translateX(-20%)
+  transition: $inlineConsole-transition-duration ($inlineConsole-transition-duration - 0.3) ease-in-out, background 0.3s ease-in-out
+  visibility: hidden
+
+  +respond-to($g-s)
+    left: auto
+    right: 3px // FIXME: Magic number!
+    top: 3px // FIXME: Magic number!
+
+// ----- Card ----- //
+
+.inlineConsole-card
+  padding-bottom: $b-space-l + 2em // FIXME: Magic number!
+
+  +respond-to($g-s)
+    padding-bottom: $b-space
+
+// ----- Icon ----- //
+
+.inlineConsole-icon
+  color: $c-text-invert
+  display: inline-block
+  font-weight: bold
+  left: $b-space
+  position: absolute
+  top: 50%
+  transition: $inlineConsole-transition-duration ($inlineConsole-transition-duration - 0.3) ease-in-out
+  vertical-align: middle
+  z-index: 1
+
+// Icon: Caret
+
+.inlineConsole-icon--caret
+  color: $c-subdue
+  transform: translateY(-50%)
+
+  &::before
+    content: '>'
+
+// Icon: Check
+
+.inlineConsole-icon--check
+  opacity: 0
+  transform: translateY(0)
+  visibility: hidden
+
+  &::before
+    content: '✓'
+
+// ----- Input ----- //
+
+.inlineConsole-input
+  background: $inlineConsole-input-background
+  border-color: transparent
+  color: $c-text-invert
+  font-family: $b-fontFamily-mono
+  padding-left: $b-space-l
+  transition: $inlineConsole-transition
+
+  &:focus
+    background-color: $inlineConsole-input-background
+    border-color: transparent
+    color: $c-text-invert

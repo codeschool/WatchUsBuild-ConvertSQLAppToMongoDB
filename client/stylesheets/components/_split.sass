@@ -1,0 +1,67 @@
+// *************************************
+//
+//   Split
+//   -> Horizontally repellent content
+//      CodePen: http://codepen.io/johndjameson/pen/uvtCI
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %ul.split[divided middle]
+//
+//   %li.split-item
+//
+//     .split-cell
+//       / ...
+//     .split-cell
+//       / ...
+//
+// *************************************
+
+.split
+  +list-reset
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Divided ----- //
+
+.split--divided
+
+  .split-item:not(:last-child)
+    border-bottom: $b-border
+    padding-bottom: $b-space
+
+  .split-item:not(:first-child)
+    padding-top: $b-space
+
+// ----- Middle ----- //
+
+.split--middle
+
+  .split-cell
+    vertical-align: middle
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Cell ----- //
+
+.split-cell
+  display: table-cell
+
+  &:first-child
+    width: 10000px
+
+  &:last-child
+    white-space: nowrap
+
+// ----- Item ----- //
+
+.split-item
+  display: table
+  margin-bottom: 0
+  width: 100%

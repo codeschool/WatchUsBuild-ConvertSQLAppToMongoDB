@@ -1,0 +1,32 @@
+// *************************************
+//
+//   External Link
+//   -> Non-contextual hypertext
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .externalLink
+//   .externalLink-icon
+//
+// *************************************
+
+.externalLink
+
+  +state
+
+    .externalLink-icon
+      opacity: 0.5
+      transform: translateX(#{$b-space-xs})
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.externalLink-icon
+  display: inline-block
+  opacity: 0
+  position: relative
+  top: - em(4px) // FIXME: Magic number!
+  transition: $b-transition

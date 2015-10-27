@@ -1,0 +1,88 @@
+// *************************************
+//
+//   Alert
+//   -> Warning message
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .alert[error|success|warning]
+//
+//   .alert-msg
+//
+//     .alert-msg-close
+//
+// *************************************
+
+.alert
+  border-radius: $b-borderRadius
+  color: $c-text-invert
+  margin: $b-space-xs
+  padding: $b-space
+  position: relative
+  transition: $b-transition
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Types ----- //
+
+.alert--error
+  background: $c-error
+
+.alert--success
+  background: $c-success
+
+.alert--info,
+.alert--warning
+  background: $c-warning
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Dismissed ----- //
+
+.alert.is-dismissed
+  opacity: 0
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+.has-alert
+  list-style-type: none
+  margin: 0
+  padding: 0
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 10
+  width: 100%
+
+  +respond-to($g-m)
+    width: em(300px)
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Message ----- //
+
+.alert-msg
+  margin-bottom: 0
+
+// Close
+
+.alert-msg-close
+  color: $c-text-invert
+  font-size: $b-fontSize-xl
+  font-weight: bold
+  position: absolute
+  right: $b-space-xs
+  top: 0
+
+  +state
+    color: rgba($c-text-invert, 0.5)

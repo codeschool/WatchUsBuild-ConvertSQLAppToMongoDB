@@ -1,0 +1,96 @@
+block current_nav
+  - current_page = 'News'
+
+block layout_variables
+  - pageTitle = 'News'
+  - metaDescription = 'The latest news from the JavaScript community and the fine folks at 5 Minutes of JavaScript.'
+  - dispatcher = 'news'
+
+extends /views/layouts/layout
+
+block content
+
+  .has-alert
+    include /views/partials/_flash
+
+  section.row.has-sector
+    .cell
+      .g
+        .g-b.g-b--m--2of3.sector.sector--a
+          .well.well--l.well--m--xl.mbl
+
+            h1.h.h--2
+              | News From the
+              span.dib.wsnw Community
+                a.mls.tch(href="/feed/rss")
+                  - iconPartial = { name: 'rss', size: 20 }
+                  include /views/partials/_icon
+
+            .g
+              .g-b.g-b--l--3of4
+
+                p.mbf--l.ptxs--l.tcs.tss
+                  | A curated list of news and stories submitted from the
+                  | JavaScript.com community. To learn more about how you
+                  | can contribute, visit our
+                  a(href='/guidelines') Community&nbsp;Guidelines
+                  | .
+
+              .g-b.g-b--l--1of4
+
+                a.btn.btn--a.db.dib--s.fr--l(href='/news/new') New Post
+
+          .mbxl.js-loadFeed
+            ul.list.list--divided.js-loadFeed-list
+
+              - for story in docs
+
+                h2
+                li.list-item
+                  article.bucket
+                    .bucket-media
+                      img.thumb(src=story.user.avatar_url width='50')
+                    .bucket-content
+                      h2.h.h--4
+                        a.externalLink.tct.twb(href=story.url target='_blank'
+                          data-pub=new Date(story.published_at).valueOf())
+                          = story.title
+                          - iconPartial = { name: 'external', className: 'externalLink-icon', size: 16 }
+                          include /views/partials/_icon
+                      p.mbf.tcs.tfh.tss
+                        | via 
+                        span.twsb= story.user.name
+                        |  |
+                        a(href='/news/' + story.slug + '#comments')
+                          | View Discussion
+                          if story.comment_count > 0
+                            | (
+                            = story.comment_count
+                            | )
+
+        .g-b.g-b--m--1of3.sector.sector--b
+          .well.well--l.well--m--xl
+            .sector-content
+
+              .mbl
+                img.db.mbl.mhc(src='/images/img-news.svg' alt='' width='250')
+
+                h2.h.h--3 News From FiveJS
+
+                p.tcs.tss 5 Minutes of JavaScript (FiveJS) is a weekly newsletter and podcast curating the latest news in the JavaScript community.
+
+                a.btn.btn--a--bordered.db.dib--s.mbs.mrs--s(href='https://itunes.apple.com/us/podcast/5-minutes-of-javascript/id775261328') Listen Now
+                a.btn.btn--a--bordered.db.dib--s(href='https://fivejs.codeschool.com/') Visit Site
+
+              h3.h.h--4.mbs The Latest News in Your Inbox
+
+              p.tcs.tss Subscribe now to the weekly 5 Minutes of JavaScript newsletter.
+
+              .newsletter.js-newsletter
+                form.form.form--inline.newsletter-form.js-newsletter-form
+                  fieldset.form-field.mbs
+                    input.form-input(type='email' name='email' placeholder='Email Address' required)
+                    p.mbf.mts.tce.tsxs.is-hidden.js-newsletter-error
+
+                  .tar
+                    input.btn.btn--b.btn--block.btn--m--inline.form-btn(type='submit' value='Subscribe')

@@ -1,0 +1,21 @@
+- headerPartial = headerPartial || {}
+- headerPartial.bleed = headerPartial.bleed || false
+- menu = { 'News' : '/news', 'Resources' : '/resources' }
+
+block current_nav
+
+header.row.header(class=(headerPartial.bleed ? 'bc-regent' : '' ) role='banner')
+  .cell.well.well--s.well--m--m
+
+    .split.split--middle
+      .split-item
+        .split-cell
+          a.dib(href='/')
+            img.dn--m(src='/images/logo-mark.svg' alt='JavaScript.com' width='54')
+            img.dn.db--m(src='/images/logo.svg' alt='JavaScript.com' width='275')
+        nav.split-cell(role='navigation')
+          each url, title in menu
+            if current_page == title
+              a.underline.header-link.is-active(href=url class=(headerPartial.bleed ? 'underline--alt' : '' ))= title
+            else
+              a.underline.header-link(href=url class=(headerPartial.bleed ? 'underline--alt' : '' ))= title

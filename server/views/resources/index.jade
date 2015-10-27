@@ -1,0 +1,61 @@
+block current_nav
+  - current_page = 'Resources'
+
+block layout_variables
+  - pageTitle = 'Free Resources'
+  - metaDescription = 'A collection of free resources from the JavaScript community to for beginners to advanced JS developers.'
+
+extends /views/layouts/layout
+
+block content
+
+  section.row
+    .cell.cell--s.well.well--l.well--m--xl
+
+      .bdrbl.mbl.pbl
+        h1 Free Resources
+        p.mbf.tcs
+          | Here is a curated list of places you can start learning
+          | JavaScript for free.
+
+      ul.list.list--l.list--divided.list--divided--l
+
+        - item = { title: 'Try JavaScript', url: '/try', media: '/images/resources/img-try-js.jpg' }
+        - item.description = 'A short interactive tutorial to get you typing your first JavaScript code. Learning JavaScript is easier than you might think.'
+        include /views/resources/_resource
+
+        - item = { title: "Code School's JavaScript Road Trip", url: 'http://javascript-roadtrip.codeschool.com/', media: '/images/resources/img-jsrt.jpg' }
+        - item.description = 'A learn-by-doing introduction to the basics of the JavaScript language with high-quality videos and interactive challenges. Build a foundation of JavaScript syntax and learn how to use values, variables, and files.'
+        include /views/resources/_resource
+
+        - item = { title: "Pluralsight's Quick Start To JavaScript", url: 'http://www.pluralsight.com/courses/quick-start-javascript-1-1870', media: '/images/resources/img-pluralsight.jpg' }
+        - item.description = 'A screencast that takes you from learning the basics to creating your own zombie text adventure game.'
+        include /views/resources/_resource
+
+        - item = { title: 'MDN JavaScript Guide', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide', media: '/images/resources/img-mdn.jpg' }
+        - item.description = 'A large series of written guides curated by Mozilla and the community. From loops, to text formatting, and even metaprogramming, this is the de facto guide.'
+        include /views/resources/_resource
+
+        - item = { title: 'Codecademy JavaScript Track', url: 'http://www.codecademy.com/courses/getting-started-v2/', media: '/images/resources/img-codecademy.jpg' }
+        - item.description = 'A written, interactive in-browser course on the fundamentals of JavaScript. It includes a couple projects where you use JavaScript to build a contact list, address book, and cash register.'
+        include /views/resources/_resource
+
+        - item = { title: 'Eloquent JavaScript', url: 'http://eloquentjavascript.net/', media: '/images/resources/img-eloquent-js.jpg' }
+        - item.description = 'An online book about JavaScript, programming, and the wonders of the digital. It covers the basics, the browser, and even some Node.js.'
+        include /views/resources/_resource
+
+        - item = { title: 'JavaScript for Cats', url: 'http://jsforcats.com/', media: '/images/resources/img-js-for-cats.jpg' }
+        - item.description = "If you are a cat and would like to start learning JavaScript, there is no better place than this online book. It’ll be more fun than pawing over a glass of water on your laptop."
+        include /views/resources/_resource
+
+        - item = { title: 'You Don’t Know JavaScript', url: 'https://github.com/getify/You-Dont-Know-JS', media: '/images/resources/img-you-dont-know-js.jpg' }
+        - item.description = 'A series of books you can read online for free, by Kyle Simpson. From just getting started, to object prototypes, and asynchronous programming, these free books cover a lot of ground.'
+        include /views/resources/_resource
+
+        - item = { title: 'Try jQuery', url: 'http://try.jquery.com/', media: '/images/resources/img-try-jquery.jpg' }
+        - item.description = 'If you’re primarily interested in JavaScript to make interactive web pages, you might want to jump straight into jQuery, the most popular JavaScript library on the Internet.'
+        include /views/resources/_resource
+
+        - item = { title: 'JSbooks', url: 'http://jsbooks.revolunet.com/', media: '/images/resources/img-js-books.png' }
+        - item.description = 'An extensive collection of free JavaScript books categorized by beginner, intermediate, and advanced.'
+        include /views/resources/_resource

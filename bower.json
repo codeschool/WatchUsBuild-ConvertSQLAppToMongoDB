@@ -1,0 +1,32 @@
+{
+  "name": "JavaScript.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/codeschool/JavaScript.com",
+  "authors": [
+    "Code School"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "abecedary": "~0.0.5",
+    "angular": "1.4.0-beta.6",
+    "angular-animate": "1.4.0-beta.6",
+    "angular-cookies": "1.4.0-beta.6",
+    "angular-resource": "1.4.0-beta.6",
+    "autosize": "~3.0.6",
+    "bootstrap": "~3.3.4",
+    "codemirror": "~3.16.0",
+    "cs_console": "https://github.com/renz45/cs_console/archive/master.zip",
+    "jquery": "~2.1.3",
+    "lodash": "~3.5.0",
+    "marked": "~0.3.3",
+    "mocha": "~2.2.1"
+  }
+}

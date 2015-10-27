@@ -1,0 +1,20 @@
+{
+  "name": "abecedary",
+  "repo": "codeschool/abecedary",
+  "description": "Crossdomain JavaScript test runner for Mocha.",
+  "version": "0.0.5",
+  "keywords": ["mocha", "stuff.js", "iframe", "test"],
+  "dependencies": { },
+  "development": {
+    "visionmedia/mocha": "*",
+    "component/emitter": "*",
+    "then/promise": "*",
+    "segmentio/extend": "*",
+    "adamfortuna/stuff.js": "*"
+  },
+  "license": "MIT",
+  "main": "dist/abecedary.js",
+  "scripts": [
+    "dist/abecedary.js"
+  ]
+}

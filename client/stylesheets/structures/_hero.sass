@@ -1,0 +1,59 @@
+// *************************************
+//
+//   Hero
+//   -> Principle row
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .hero
+//
+//   .hero-card
+//
+// *************************************
+
+.hero
+  position: relative
+
+  +respond-to($g-m)
+    min-height: $hero-minHeight
+
+  &::before
+    background: url('/images/img-hero.svg') center bottom no-repeat
+    background-size: cover
+    bottom: 0
+    content: ''
+    display: none
+    height: $hero-minHeight
+    left: 0
+    opacity: 0.2
+    position: absolute
+    width: 100%
+    z-index: 0
+
+    +respond-to($g-l)
+      display: block
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Card ----- //
+
+.hero-card
+  animation: hero-card-fadeInScale 1.2s ease 0.3s forwards
+  opacity: 0
+
+// -------------------------------------
+//   Animations
+// -------------------------------------
+
+// ----- Fade In Scale ----- //
+
+@keyframes hero-card-fadeInScale
+  from
+    opacity: 0
+    transform: scale(1.1)
+  to
+    opacity: 1

@@ -1,0 +1,21 @@
+{
+  "name": "javascript",
+  "description": "",
+  "main": "abecedary-javascript.js",
+  "author": "Code School",
+  "license": "AAL",
+  "dependencies": {
+    "abecedary": "https://github.com/codeschool/abecedary/tarball/master",
+    "mocha": "~1.17.0",
+    "sinon": "https://github.com/cjohansen/Sinon.JS/tarball/browserify",
+    "chai": "~1.8.1",
+    "javascript-sandbox": "https://github.com/codeschool/javascript-sandbox/tarball/master",
+    "jshint": "~2.4.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-shell": "~0.6.4",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}

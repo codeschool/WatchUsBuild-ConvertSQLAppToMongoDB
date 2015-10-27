@@ -1,0 +1,72 @@
+// *************************************
+//
+//   Underline
+//   -> Highly stylized link border
+//      CodePen: http://codepen.io/drewbarontini/pen/oXNWYw
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %a.underline[alt]
+//
+// *************************************
+
+.underline
+  border-bottom: $underline-border
+  position: relative
+  text-decoration: none
+
+  &::after,
+  &::before
+    content: ''
+    height: $underline-borderWidth
+    left: 0
+    position: absolute
+    top: 100%
+    width: 100%
+
+  &::after
+    background: $underline-borderColor
+
+  &::before
+    background: $underline-cover-background
+    transform: translateX(0)
+    transition: transform $underline-color-transition-duration ease-in-out
+    z-index: 1
+
+  &:active,
+  &:focus,
+  &:hover
+    background: none
+
+    &::before
+      transform: translateX(100%)
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Alt ----- //
+
+.underline--alt
+
+  &::after
+    background: $underline--alt-borderColor
+
+  &::before
+    background: $underline--alt-cover-background
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Active ----- //
+
+.underline.is-active
+
+  &::after
+    z-index: 2
+
+  &::before
+    display: none

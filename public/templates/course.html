@@ -1,0 +1,62 @@
+<div class='course js-course'>
+  <section class='row courseLayout-main'>
+    <div class='cell well well--s--l'>
+      <div class='g'>
+        <div class='g-b g-b--m--3of4'>
+
+          <nav>
+            <ol class='completionList mbm'>
+              <li ng-repeat='challenge in ctrl.challenges' ng-class="{ 'is-active': challenge.active, 'is-completed': challenge.completed }" class='completionList-item' tooltip="{{ ::challenge.title }}">
+                <svg class='icon completionList-item-icon' width='10' height='10'>
+                  <use xlink:href='#icon-check'/>
+                </svg>
+                <a ng-if='challenge.started' ng-click='ctrl.activateChallenge(challenge)' class='completionList-item-link'></a>
+              </li>
+
+              <li ng-class="{ 'is-active': ctrl.onWrapupPage(), 'is-completed': ctrl.challengeProgress.courseCompleted }" class='completionList-item' tooltip='Wrapup'>
+                <svg class='icon completionList-item-icon' width='14' height='14'>
+                  <use xlink:href='#icon-star'/>
+                </svg>
+                <a ng-if='ctrl.challengeProgress.courseCompleted' ng-click='ctrl.activateChallenge(null)' class='completionList-item-link'></a>
+              </li>
+            </ol>
+          </nav>
+
+          <div ng-if='ctrl.challenges.length'>
+            <js-challenge ng-repeat='challenge in ::ctrl.challenges' challenge='challenge' ng-if='challenge.active' class='animate--fade'></js-challenge>
+
+            <div ng-if='ctrl.onWrapupPage()' class='animate--fade'>
+              <div class="g">
+                <div class="g-b g-b--m--2of5 mbl">
+                  <img src='/images/badge-try-javascript.svg' width='220' height='220' class='thumb mhc' alt='Try JavaScript Badge'/>
+                </div>
+
+                <div class='g-b g-b--m--3of5'>
+                  <h1 class='h h--1 h--semibold'>Congratulations!</h1>
+
+                  <p>You completed Try JavaScript and you earned this shiny new badge! If you'd like to add it to your achievements, you'll need to sign into your Code School account below.</p>
+                  <p class="mbl">Otherwise, if you want to learn about other places to get started with JavaScript, head over to our <a href='/resources'>Resources</a> page.</p>
+
+                  <a href='https://www.codeschool.com/achievements/512/award' class='btn db dib--s mbs mrs mrs--s'>Claim Your Badge</a>
+                  <a href='/resources' class='btn db dib--s btn--a--bordered'>Nope, I’m Good</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='g-b g-b--m--1of4 dn db--m tac'>
+          <img src='/images/img-try-javascript.svg' class='por potmn' width='200' alt='Try JavaScript'/>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class='row bc-snow'>
+    <div class='cell well well--s--l'>
+      <js-messages></js-messages>
+      <js-console></js-console>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+// *************************************
+//
+//   Console
+//   -> Terminal window
+//
+//  Dependencies: .CodeMirror .cm-*
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .console[single]
+//
+//   .console-ui
+//
+//     .console-hint
+//
+//     .console-msg[error|help|success]
+//       %p.console-msg-title
+//
+// *************************************
+
+.console
+  background: $console-background
+  border-radius: $b-borderRadius
+  box-sizing: border-box
+  font-size: $console-fontSize
+  min-height: 100%
+  overflow: auto
+  padding: $b-space
+  position: relative
+  width: 100%
+  z-index: zi('console')
+
+  ul
+    +list-reset
+
+  li
+    color: $console-color
+
+  .cs-console-height
+    height: $console-height
+
+    +respond-to(em(750px), min-height)
+      height: 30vh // FIXME: Magic number!
+      max-height: $console-maxHeight
+
+  .CodeMirror
+    background: $console-background
+    color: $console-color
+
+    code
+      background-color: $console-color
+      border-radius: 4px
+      color: $console-background
+      display: inline-block
+      padding: $b-space-xs 1ch
+
+    .CodeMirror-cursor
+      border-color: $console-color
+      border-width: $console-cursor-size
+
+  +respond-to($g-m)
+    font-size: $console-fontSize-l
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Hint ----- //
+
+.console-hint
+  margin-top: $b-space-s
+
+// ----- Message ----- //
+
+.console-msg
+  color: $c-subdue
+  line-height: 1.5
+  margin-top: $b-space-s
+
+// Error
+
+.console-msg--error
+  color: $c-error
+
+// Help
+
+.console-msg--help
+  color: $c-warning
+
+// Success
+
+.console-msg--success
+  color: $c-success
+
+// Title
+
+.console-msg-title
+  color: $console-color
+  margin-top: $b-space-s

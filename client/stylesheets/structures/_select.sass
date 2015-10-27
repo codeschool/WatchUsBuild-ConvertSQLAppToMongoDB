@@ -1,0 +1,93 @@
+// *************************************
+//
+//   Select
+//   -> Menu input
+//
+//   Dependencies: .form
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .select
+//   %input.select-input
+//     %option.select-input-option
+//
+// *************************************
+
+.select
+  color: $select-color
+  display: block
+  font-family: $b-fontFamily
+  font-size: $b-fontSize
+  position: relative
+
+  &::after
+    border-bottom: $select-caret-size solid transparent
+    border-left: $select-caret-size solid transparent
+    border-right: $select-caret-size solid transparent
+    border-top: $select-caret-size solid
+    color: $select-caret-color
+    content: ''
+    display: inline-block
+    height: 0
+    line-height: 1
+    pointer-events: none
+    position: absolute
+    right: $b-space
+    top: calc(50% - 2px) // FIXME: Magic number!
+    width: 0
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Input ----- //
+
+.select-input
+  -moz-appearance: none
+  -webkit-appearance: none
+  appearance: none
+  background-color: $select-background
+  border-radius: $select-borderRadius
+  border: $b-borderWidth $b-borderStyle darken($c-border, 8%)
+  box-shadow: none
+  box-sizing: border-box
+  color: $select-color
+  cursor: pointer
+  display: block
+  line-height: $form-shared-lineHeight
+  margin: 0
+  outline: 0
+  padding: $b-space-s $b-space
+  width: 100%
+
+  &:focus
+    border-color: $c-highlight
+
+    &:-moz-focusring
+      color: transparent
+      text-shadow: 0 0 0 $select-color
+
+// -------------------------------------
+//   Browser Support
+// -------------------------------------
+
+// ----- Internet Explorer ----- //
+
+// IE9+
+
+@media screen and (min-width:0\0)
+
+  .select::after
+    display: none
+
+// IE10+
+
+.select-input::-ms-expand
+  display: none
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+
+  .select::after
+    display: inline-block

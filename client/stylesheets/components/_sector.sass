@@ -1,0 +1,64 @@
+// *************************************
+//
+//   Sector
+//   -> Adjacent bleed divisions
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .has-sector
+//
+// .sector[a|b]
+// .sector[a|b]
+//
+// *************************************
+
+.sector
+  position: relative
+
+  &::before
+    content: ''
+    height: 1000%
+    left: 0
+    position: absolute
+    top: 0
+    width: 1000%
+    z-index: -1
+
+    +respond-to($g-m)
+      left: $g-gutter
+
+  &:first-child::before
+    left: auto
+    right: 0
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Hierarchy----- //
+
+.sector--a::before
+  background: $sector--a-background
+
+.sector--b::before
+  background: $sector--b-background
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+.has-sector
+  overflow: hidden
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Content ----- //
+
+.sector-content
+
+  +respond-to($g-m)
+    padding-left: $b-space-l

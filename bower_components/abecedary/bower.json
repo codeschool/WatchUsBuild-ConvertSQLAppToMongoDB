@@ -1,0 +1,10 @@
+{
+  "name": "abecedary",
+  "version": "0.0.4",
+  "main": "dist/abecedary.js",
+  "ignore": [
+    "**/*.txt"
+  ],
+  "dependencies": { },
+  "devDependencies": { }
+}

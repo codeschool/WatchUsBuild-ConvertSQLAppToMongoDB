@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="244px" height="208px" viewBox="0 0 244 208" enable-background="new 0 0 244 208" xml:space="preserve">
+<g>
+	<circle fill="#323E39" cx="120" cy="104" r="104"/>
+	<rect x="100" y="128" fill="#309BB2" width="112" height="80"/>
+	<path fill="#309BB2" d="M212,124c0,2.2-1.8,4-4,4h-72c-2.2,0-4-1.8-4-4V36c0-2.2,1.8-4,4-4h72c2.2,0,4,1.8,4,4V124z"/>
+	<path fill="#F1D511" d="M172,124c0,2.2-1.8,4-4,4H96c-2.2,0-4-1.8-4-4V36c0-2.2,1.8-4,4-4h72c2.2,0,4,1.8,4,4V124z"/>
+	<path fill="#E45D53" d="M156,104c0,8.8-7.2,16-16,16h-24c-8.8,0-16-7.2-16-16V56c0-8.8,7.2-16,16-16h24c8.8,0,16,7.2,16,16V104z"/>
+	<path fill="#323E39" d="M164,104c0,8.8-7.2,16-16,16h-24c-8.8,0-16-7.2-16-16V56c0-8.8,7.2-16,16-16h24c8.8,0,16,7.2,16,16V104z"/>
+	<line fill="none" stroke="#7FAB67" stroke-width="4" stroke-miterlimit="10" x1="116" y1="56" x2="132" y2="56"/>
+	<line fill="none" stroke="#7FAB67" stroke-width="4" stroke-miterlimit="10" x1="124" y1="64" x2="148" y2="64"/>
+	<line fill="none" stroke="#7FAB67" stroke-width="4" stroke-miterlimit="10" x1="124" y1="72" x2="140" y2="72"/>
+	
+		<line fill="none" stroke="#37433E" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" x1="184" y1="72" x2="200" y2="72"/>
+	
+		<line fill="none" stroke="#37433E" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" x1="184" y1="84" x2="200" y2="84"/>
+	
+		<line fill="none" stroke="#37433E" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" x1="184" y1="96" x2="200" y2="96"/>
+	<polygon fill="#F8F4E4" points="116,160 148,128 68,128 36,160 	"/>
+	<rect x="36" y="160" fill="#F1D511" width="80" height="48"/>
+	<rect x="172" y="120" fill="#309BB2" width="40" height="24"/>
+	<polygon fill="#309BB2" points="68,144 60,152 108,152 116,144 	"/>
+	<polygon fill="#F8F4E4" points="172,112 124,160 172,160 220,112 	"/>
+	<rect x="124" y="160" fill="#F1D511" width="48" height="48"/>
+	<polygon fill="#309BB2" points="220,112 172,160 172,208 228,208 228,112 	"/>
+	<rect x="68" y="120" fill="#E45D53" width="40" height="32"/>
+	<path fill="#F8F4E4" d="M52,104c-8.8,0-16,7.2-16,16v48h40v-48h16v-16H52z"/>
+	<path fill="#323E39" d="M76,120c0-8.8,7.2-16,16-16s16,7.2,16,16"/>
+	<rect x="20" y="168" fill="#E45D53" width="40" height="16"/>
+	<path fill="#E45D53" d="M4,168c0,8.8,7.2,16,16,16s16-7.2,16-16"/>
+	<path fill="#323E39" d="M44,168c0,8.8,7.2,16,16,16s16-7.2,16-16"/>
+	<rect x="4" y="128" fill="#E45D53" width="40" height="40"/>
+	<polygon fill="#E45D53" points="4,128 4,124 8,128 12,124 16,128 20,124 24,128 28,124 32,128 36,124 40,128 44,124 44,128 	"/>
+	<rect x="76" y="152" fill="#F1D511" width="8" height="8"/>
+	<rect x="132" y="168" fill="#309BB2" width="32" height="40"/>
+	<rect x="132" y="168" fill="#323E39" width="32" height="8"/>
+	<polygon fill="#F8F4E4" points="172,112 140,144 172,144 204,112 	"/>
+	<polygon fill="#309BB2" points="204,112 204,120 172,152 172,144 	"/>
+	<rect x="140" y="144" fill="#F1D511" width="32" height="8"/>
+	<circle fill="#7FAB67" cx="24" cy="88" r="24"/>
+	<polygon fill="#7FAB67" points="32,104 24,120 16,104 	"/>
+	<g>
+		<path fill="#F8F4E4" d="M26.6,96.1c0,1.4-1.1,2.6-2.6,2.6c-1.4,0-2.6-1.2-2.6-2.6c0-1.4,1.1-2.6,2.6-2.6
+			C25.4,93.6,26.6,94.7,26.6,96.1z M21,78h6l-0.9,12.8h-4.2L21,78z"/>
+	</g>
+	<rect x="132" y="168" fill="#323E39" width="4" height="40"/>
+	<rect x="180" y="176" fill="#9CD4DE" width="64" height="32"/>
+	<polygon fill="#309BB2" points="244,176 212,192 180,176 212,200 	"/>
+</g>
+</svg>

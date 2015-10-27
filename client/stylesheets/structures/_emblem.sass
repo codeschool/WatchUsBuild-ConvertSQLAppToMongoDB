@@ -1,0 +1,38 @@
+// *************************************
+//
+//   Emblem
+//   -> Fixed badge
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .emblem
+//   .emblem-item
+//
+// *************************************
+
+.emblem
+  position: relative
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Content ----- //
+
+.emblem-content
+  padding-top: $b-space-l
+
+  +respond-to($g-m)
+    padding-top: $b-space
+
+// ----- Item ----- //
+
+.emblem-item
+  border-radius: 50%
+  border: $b-borderWidth-xl $b-borderStyle $c-text-invert
+  left: 50%
+  position: absolute
+  top: -2em // FIXME: Magic number!
+  transform: translateX(-50%)

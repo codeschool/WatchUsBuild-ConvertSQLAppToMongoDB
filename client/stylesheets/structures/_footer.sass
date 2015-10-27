@@ -1,0 +1,56 @@
+// *************************************
+//
+//   Footer
+//   -> Page end
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// .footer
+//
+//   .footer-logo
+//   .footer-text
+//
+// *************************************
+
+.footer
+  background: $footer-background
+
+  +respond-to($g-l)
+    bottom: 0
+    box-sizing: border-box
+    left: 0
+    height: $site-footer-height
+    position: absolute
+    right: 0
+    width: 100%
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Logo ----- //
+
+.footer-logo
+  display: block
+  margin-bottom: $b-space
+  margin-left: auto
+  margin-right: auto
+  transition: $b-transition
+
+  +state
+    opacity: 1
+
+  +respond-to($g-l)
+    margin-left: 0
+    margin-right: 0
+
+// ----- Text ----- //
+
+.footer-text
+  color: rgba($c-text-invert, 0.5)
+  font-family: $b-fontFamily-heading
+  font-size: $b-fontSize-xs
+  margin-bottom: $b-space-l
+  margin-top: $b-space-s

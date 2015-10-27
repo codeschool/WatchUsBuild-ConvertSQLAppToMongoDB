@@ -1,0 +1,42 @@
+footer.row.footer(role='contentinfo')
+  .cell.well.well--l.tac
+
+    .footer-logo
+      a.db.mbs(href='/')
+        img(src='/images/logo-monochrome.svg' alt='JavaScript.com' width='86')
+
+    ul.list.list--inline.list--inline--dotted.tsxs
+      li.list-item.tci
+        a.link.link--inverted(href='/about') About
+      li.list-item.tci
+        a.link.link--inverted(href='/assets') Asset Downloads
+      li.list-item.tci
+        a.link.link--inverted(href='/feedback') Give Feedback
+      li.list-item.tci
+        a.link.link--inverted(href='/guidelines') Community Guidelines
+
+    p.footer-text
+      | &copy; 2015 JavaScript.com; Crafted lovingly in Orlando, Florida. 
+
+    ul.list.list--inline.mbm
+      li.list-item
+        a.link.link--inverted(href='https://twitter.com/javascriptcom')
+          - iconPartial = { name: 'twitter', size: 24 }
+          include /views/partials/_icon
+      li.list-item
+        a.link.link--inverted(href='/feed/rss')
+          - iconPartial = { name: 'rss', size: 16 }
+          include /views/partials/_icon
+
+    p.footer-text.mtf.pts
+      | Hosted by 
+      a.link.link--inverted(href='https://www.digitalocean.com') DigitalOcean
+
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63921180-1', 'auto');
+      ga('send', 'pageview');

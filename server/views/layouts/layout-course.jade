@@ -1,0 +1,56 @@
+doctype html
+html.courseLayout.js-courseLayout(lang='en')
+
+  block layout_variables
+  include /views/layouts/_head
+
+  - dispatcher = dispatcher ? dispatcher : ''
+  body.mbf.js-dispatcher(data-dispatcher-page=dispatcher)
+
+    header.header.courseLayout-header(role='banner')
+      .row
+        .cell.well.well--s.well--m--m
+
+          .courseLayout-header-content
+            .split.split--middle
+              .split-item
+                .split-cell
+                  a.dib(href='/')
+                    img.dn--m(src='/images/logo-mark.svg' alt='JavaScript.com' width='54')
+                    img.dn.db--m(src='/images/logo.svg' alt='JavaScript.com' width='275')
+                nav.split-cell(role='navigation')
+                  a.underline.header-link(href='/news') News
+                  a.underline.header-link(href='/resources') Resources
+
+      button.courseLayout-header-toggle.js-courseLayout-toggle Toggle Navigation
+
+    main(role='main')
+      block content
+
+      section.row.tac.js-preload
+        .well.well--l.well--m--xl.cell
+
+          .preloader
+            p.srt Loading Try JavaScript
+
+            .preloader-progress
+              .preloader-progress-item
+              .preloader-progress-item
+              .preloader-progress-item
+
+            .preloader-img
+              include /../public/images/logo-mark-dotless.svg
+
+    script(src='/javascripts/vendor.js')
+    script(src='/javascripts/vendor-course.js')
+    script(src='/javascripts/course.js')
+    script(src='/javascripts/application.js')
+
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63921180-1', 'auto');
+      ga('send', 'pageview');

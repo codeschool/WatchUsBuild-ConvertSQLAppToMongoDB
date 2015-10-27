@@ -1,0 +1,104 @@
+// *************************************
+//
+//   Course Layout
+//   -> Interface sections
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %html.courseLayout(active)
+//
+//   .courseLayout-header
+//     .courseLayout-header-toggle
+//
+//   .courseLayout-main
+//
+// *************************************
+
+.courseLayout
+  background-color: $tulip
+  min-height: 100vh
+  transform: translateY(#{-$site-header-height + ($courseLayout-header-toggle-height / 2)})
+  transition: transform $b-transition
+
+  +respond-to($g-m)
+    transform: translateY(#{-$site-header-height-l + ($courseLayout-header-toggle-height / 2)})
+
+  +respond-to($courseLayout-viewportHeight-l, min-height)
+    transform: none
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Active ----- //
+
+.courseLayout.is-active
+  transform: none
+
+  .courseLayout-header-content
+    opacity: 1
+
+// ----- Loaded ----- //
+
+.courseLayout.is-loaded
+  background-color: $snow
+
+  .courseLayout-header
+    visibility: visible
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Header ----- //
+
+.courseLayout-header
+  position: relative
+  visibility: hidden
+  z-index: 1
+
+// Scaffolding
+
+// Scaffolding: Content
+
+.courseLayout-header-content
+  opacity: 0
+  transition: opacity $b-transition
+
+  +respond-to($courseLayout-viewportHeight-l, min-height)
+    opacity: 1
+
+// Scaffolding: Toggle
+
+.courseLayout-header-toggle
+  +action
+  background-color: $tulip
+  border-radius: 100px
+  border: 0
+  color: $c-text-invert
+  font-size: 12px
+  height: $courseLayout-header-toggle-height
+  left: 50%
+  line-height: $courseLayout-header-toggle-height
+  outline: 0
+  padding-left: $b-space-xl
+  padding-right: $b-space-xl
+  position: absolute
+  top: calc(100% - #{$courseLayout-header-toggle-height / 2})
+  transform: translateX(-50%)
+  transition: transform $b-transition
+  z-index: 1
+
+  +state
+    transform: translate(-50%) scale(1.1)
+
+  +respond-to($courseLayout-viewportHeight-l, min-height)
+    display: none
+
+// ----- Main ----- //
+
+.courseLayout-main
+  background-color: $white
+  padding-top: $b-space
