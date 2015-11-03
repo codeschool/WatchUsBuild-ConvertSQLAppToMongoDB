@@ -152,21 +152,17 @@ var Articles = {
 
     var collection = mongo.DB.collection('articles');
     var commentId = new objectId(args.commentId);
-    var query = {'comments.id': commentId}
     var currentUser = args.user._id;
-    var projection = {'comments.$': 1};
+    var query = {comments : {$elemMatch: {id: commentId, 'user.id': new objectId(currentUser)}}}
+    var options = { projection : {'comments.$': 1}};
     var update = {
       $set: {'comments.$.body': args.updatedComment}
     }
 
-    collection.find(query).project(projection).next(function(err, doc){
-      if(doc.comments[0].user.id == currentUser){
-        collection.findOneAndUpdate(query, update, function(err,doc){
-          cb(err, doc);
-        });
-      }else{
-        cb(true)
-      }
+    collection.findOneAndUpdate(query, update, options, function(err,doc){
+      if(err) { cb(err) }
+
+      cb(err, doc);
     });
   },
 
@@ -187,22 +183,15 @@ var Articles = {
     // DELETE FROM comments where id = $1 and user_id = $2;, [id, user_id]
     var collection = mongo.DB.collection('articles');
     var commentId = new objectId(args.commentId);
-    var query = {'comments.id': commentId}
     var currentUser = args.user._id;
-    var projection = {'comments.$': 1};
+    var query = {comments : {$elemMatch: {id: commentId, 'user.id': new objectId(currentUser)}}}
     var update = {
       $pull: {comments:{id: commentId}},
       $inc: {comment_count: -1}
     }
 
-    collection.find(query).project(projection).next(function(err, doc){
-      if(doc.comments[0].user.id == currentUser){
-        collection.findOneAndUpdate(query, update, function(err,doc){
-          cb(err);
-        });
-      }else{
-        cb(true)
-      }
+    collection.findOneAndUpdate(query, update, function(err){
+      cb(err);
     });
   }
 }
