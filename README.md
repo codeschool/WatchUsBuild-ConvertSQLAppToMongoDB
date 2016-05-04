@@ -1,7 +1,8 @@
-# MongoDB Soup To Bits
+# MongoDB Watch Us Build
 
-This is the repo for the MongoDB Soup To Bits that uses a simplified version of
-JavaScript.com
+*We changed the name of this series to "Watch Us Build," so you may see an occasional reference to its former name ("Soup to Bits") in this repository.*
+
+This is the repo for the [MongoDB Watch Us Build episode](https://www.codeschool.com/screencasts/convert-a-javascript-sql-app-to-mongodb) that uses a simplified version of [JavaScript.com](https://www.javascript.com/).
 
 ## Installing NVM
 
@@ -29,9 +30,11 @@ For debugging all the things, run `DEBUG=* npm start`.
 ### Building Assets
 
 To build assets locally, you'll need to install Bower dependencies and run these Gulp tasks:
+
 ```bash
 $ bower install
 $ gulp sass
 $ gulp javascript
 ```
+
 Remember to re-run these tasks after pulling or changing branches.
